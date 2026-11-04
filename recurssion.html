@@ -1,0 +1,368 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+
+    <title> recurssion </title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <marquee direction="left" loop="" behavior=scroll>Unwrap the Magic of Programming
+            with C++ Language – Enchance Your Skills With Programming</marquee>
+
+        <div class="header">
+            <nav>
+                <ul>
+                    <li><strong>Practice Question</strong></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+
+    <!--1 question of Operator Overloading -->
+    <div class="ques">
+
+
+        <ol>
+            <li>
+                <h3>CALCULATE FACTORIAL OF A NUMBER USING RECURSION
+</h3>
+            </li>
+            <button onclick="Code('code1')">Show code</button>
+            <pre id="code1" style="display:none;">
+<xmp>
+      
+#include<stdio.h>
+
+
+int factorial(int num){
+    if (num <= 1){
+        return 1;
+    }
+    int ttl =+ num * factorial(num - 1); 
+    return ttl;
+}
+
+    
+
+int main(){
+    int num;
+int res;
+    printf("Enter the number you want the factorial of :");
+    scanf("\n%d", &num);
+
+   res= factorial(num);
+
+   printf("\nFactorial of the %d is = %d",num,res);
+}
+</xmp>
+
+</pre>
+        </ol>
+    </div>
+
+    <!--2 question of Operator Overloading -->
+    <div class="ques">
+        <ol start="2">
+
+            <li>
+                <h3> CALCULATE FIBONACCI OF A NUMBER USING RECURSION.</h3><br>
+            </li>
+            <button onclick="Code('code2')">Show code</button>
+            <pre id="code2" style="display:none;">
+
+<xmp>
+#include <stdio.h>
+
+void FIBONACCI(int n)
+{
+    int a, b, res;
+    a = 0;
+    b = 1;
+    printf("%d %d", a, b);
+
+    for (int i = 0; i < n - 2; i++)
+    {
+        res = a + b;
+        printf(" %d", res);
+        a = b;
+        b = res;
+    }
+}
+
+int main()
+{
+    int n;
+    printf("Enter how many terms you want in your Fibonacci series: ");
+    scanf("%d", &n);
+
+    FIBONACCI(n);
+}
+</xmp>
+
+</pre>
+    </div>
+
+    <!--3 question of Operator Overloading -->
+    <div class="ques">
+        <ol start="3">
+            <li>
+                <h3>CALCULATE THE SUM OF NATURAL NUMBERS TILL 10 USING RECURSION.</h3>
+            </li>
+
+            <button onclick="Code('code3')">Show code</button>
+            <pre id="code3" style="display:none;">
+      <xmp>
+#include<stdio.h>
+
+int sum(int n){
+    if(n==1){
+        return 1;
+    }
+
+    return n + sum(n-1);
+}
+
+int main(){
+    int res;
+res=sum(10);
+
+printf("%d", res);
+}
+</xmp>
+
+</pre>
+        </ol>
+    </div>
+
+
+    <!--4 question of Operator Overloading -->
+    <div class="ques">
+        <ol start="4">
+            <li>
+                <h3>CONVERT A NUMBER INTO BINARY USING RECURSION
+
+                </h3>
+            </li>
+
+            <button onclick="Code('code4')">Show code</button>
+            <pre id="code4" style="display:none;">
+      <xmp>
+#include <stdio.h>
+
+void binary(int n) {
+    if (n == 0)
+        return;
+
+    binary(n / 2);
+    printf("%d", n % 2);
+}
+
+int main() {
+    int n ;
+    printf("Enter the number you want the binary of: ");
+    scanf("%d",&n);
+
+    if (n == 0)
+        printf("0");
+    else
+        binary(n);
+
+    return 0;
+}
+</xmp>
+
+</pre>
+        </ol>
+    </div>
+
+    <!--5 question of Operator Overloading  -->
+    <div class="ques">
+
+
+        <ol start="5">
+            <li>
+                <h3><xmp>FIND THE LARGEST ELEMENT IN THE INTEGER ARRAY USING RECURSION.</xmp></h3>
+            </li>
+            <button onclick="Code('code5')">Show code</button>
+            <pre id="code5" style="display:none;">
+<xmp>
+#include<stdio.h>
+
+
+int large(int arr[],int n){
+  int larg;
+      if (n==1)
+      {
+        return arr[0];
+      }
+         larg=large(arr , n-1);
+
+      if(arr[n-1]>larg){
+        return arr[n-1];
+      }
+      else{
+        return larg;
+      }
+}
+
+int main(){
+  int res;
+int arr[]={46,10,20,30,67,12,24,121};
+res=large(arr,8);
+
+printf("Largest Number in the array is %d", res);
+}
+</xmp>
+
+</pre>
+        </ol>
+    </div>
+
+    <!--6 question of Operator Overloading  -->
+    <div class="ques">
+
+
+        <ol start="6">
+            <li>
+                <h3>FIND THE SMALLEST ELEMENT IN THE INTEGER ARRAY USING RECURSION.
+</h3>
+            </li>
+            <button onclick="Code('code6')">Show code</button>
+            <pre id="code6" style="display:none;">
+<xmp>
+#include<stdio.h>
+
+
+int min(int arr[],int n){
+  int small;
+      if (n==1)
+      {
+        return arr[0];
+      }
+         small=min(arr , n-1);
+
+      if(arr[n-1]<small){
+        return arr [n-1];
+      }
+      else{
+        return small;
+      }
+}
+
+int main(){
+  int res;
+int arr[]={46,10,20,30,67,12,24,121};
+res=min(arr,8);
+
+printf("smallest Number in the array is %d", res);
+}
+</xmp>
+
+</pre>
+        </ol>
+    </div>
+
+
+    <!--7 question of Operator Overloading  -->
+    <div class="ques">
+
+
+        <ol start="7">
+            <li>
+                <h3>ENTER THE NUMBER FROM THE USER AND ADD ALL DIGITS OF THE NUMBER USING RECURSION.
+
+</h3>
+            </li>
+            <button onclick="Code('code7')">Show code</button>
+            <pre id="code7" style="display:none;">
+<xmp>
+
+
+#include <stdio.h>
+
+int sumDigits(int n) {
+    if (n == 0)
+        return 0;                       
+    return (n % 10) + sumDigits(n / 10);
+}
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0){
+        num = -num;                     
+    }
+    printf("Sum of digits = %d", sumDigits(num));
+    return 0;
+}
+</xmp>
+
+</pre>
+        </ol>
+    </div>
+
+    <!--8 question of Operator Overloading  -->
+    <div class="ques">
+
+
+        <ol start="8">
+            <li>
+                <h3>FIND THE ARITHMETIC MEAN OF AN INTEGER ARRAY USING RECURSION.
+</h3>
+            </li>
+            <button onclick="Code('code8')">Show code</button>
+            <pre id="code8" style="display:none;">
+<xmp>
+    #include <stdio.h>
+
+int sum(int a[], int n)
+{
+    if (n == 0)
+        return 0;
+        
+    return a[n - 1] + sum(a, n - 1);
+}
+
+int main()
+{
+    int arr[100], n, i;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d values: ", n);
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    printf("Mean = %.2f", (double)sum(arr, n) / n);
+    return 0;
+}
+</xmp>
+
+</pre>
+        </ol>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+</body>
+
+</html

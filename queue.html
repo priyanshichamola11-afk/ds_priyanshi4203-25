@@ -1,0 +1,2326 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+
+      <title> Object Oriented Programming </title>
+      <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+      <header>
+
+            <marquee direction="left" loop="" behavior=scroll>Unwrap the Magic of Programming
+                  with C++ Language – Enchance Your Skills With Programming</marquee>
+
+            <div class="header">
+                  <nav>
+                        <ul>
+                              <li><strong>Practice Question</strong></li>
+                              <li><a href="index.html">Home</a></li>
+                              <li><a href="about.html">About Us</a></li>
+                              <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                  </nav>
+            </div>
+
+      </header>
+
+      <!--1 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol>
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF SIMPLE QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+</li>
+                  <button onclick="Code('code1')">Show code</button>
+                  <pre id="code1" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int queue[5];
+int front = 0;
+int rear = -1;
+
+int isEmpty()
+{
+    if (front > rear)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (rear == 4)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insert(int x)
+{
+    if (isFull())
+    {
+        printf("Queue Overflow! The queue is full.\n");
+        return;
+    }
+    rear++;
+    queue[rear] = x;
+    printf("%d inserted.\n", x);
+}
+
+void delete_element()
+{
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+    printf("%d deleted.\n", queue[front]);
+    front++;
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Front element: %d\n", queue[front]);
+}
+
+int main()
+{
+    int choice, value;
+
+    while (1)
+    {
+        printf("\n--- QUEUE MENU ---\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the value to insert: ");
+            scanf("%d", &value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp> 
+</pre>
+            </ol>
+      </div>
+
+      <!--2 question of Object Oriented Programming -->
+      <div class="ques">
+            <ol start="2">
+
+                  <li>
+                        <h3> IMPLEMENT THE OPERATIONS OF SIMPLE QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+</li>
+                  <button onclick="Code('code2')">Show code</button>
+                  <pre id="code2" style="display:none;">
+    <xmp>
+#include <stdio.h>
+#include <string.h>
+
+char queue[5][20];
+int front = 0;
+int rear = -1;
+
+int isEmpty()
+{
+    if (front > rear)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (rear == 4)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insert(char s[])
+{
+    if (isFull())
+    {
+        printf("Queue Overflow! The queue is full.\n");
+        return;
+    }
+    rear++;
+    strcpy(queue[rear], s);
+    printf("%s inserted.\n", s);
+}
+
+void delete_element()
+{
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+    printf("%s deleted.\n", queue[front]);
+    front++;
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Front element: %s\n", queue[front]);
+}
+
+int main()
+{
+    int choice;
+    char value[20];
+
+    while (1)
+    {
+        printf("\n--- QUEUE MENU ---\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the string to insert: ");
+            scanf("%s", value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+
+
+</pre>
+      </div>
+
+      <!--3 question of Object Oriented Programming -->
+      <div class="ques">
+            <ol start="3">
+                  <li>
+                        <h3> IMPLEMENT THE OPERATIONS OF QUEUE DYNAMICALLY OF INTEGERS (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+
+                        </h3>
+                  </li>
+
+                  <button onclick="Code('code3')">Show code</button>
+                  <pre id="code3" style="display:none;">
+    <xmp>
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+struct Node *front = NULL;
+struct Node *rear = NULL;
+
+int isEmpty()
+{
+    if (front == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    struct Node *test = (struct Node *)malloc(sizeof(struct Node));
+
+    if (test == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        free(test);
+        return 0;
+    }
+}
+
+void insert(int value)
+{
+    struct Node *newNode;
+
+    if (isFull())
+    {
+        printf("Queue Overflow! Memory is full.\n");
+        return;
+    }
+
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if (front == NULL)
+    {
+        front = newNode;
+        rear = newNode;
+    }
+    else
+    {
+        rear->next = newNode;
+        rear = newNode;
+    }
+
+    printf("%d inserted.\n", value);
+}
+
+void delete_element()
+{
+    struct Node *temp;
+
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    temp = front;
+    printf("%d deleted.\n", temp->data);
+    front = front->next;
+
+    if (front == NULL)
+    {
+        rear = NULL;
+    }
+
+    free(temp);
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Front element: %d\n", front->data);
+}
+
+int main()
+{
+    int choice, value;
+
+    while (1)
+    {
+        printf("\n--- QUEUE MENU ---\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the value to insert: ");
+            scanf("%d", &value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+
+      <!--4 question of Object Oriented Programming -->
+      <div class="ques">
+            <ol start="4">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF QUEUE DYNAMICALLY OF STRING (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+</li>
+
+                  <button onclick="Code('code4')">Show code</button>
+                  <pre id="code4" style="display:none;">
+    <xmp>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Node
+{
+    char data[20];
+    struct Node *next;
+};
+
+struct Node *front = NULL;
+struct Node *rear = NULL;
+
+int isEmpty()
+{
+    if (front == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    struct Node *test = (struct Node *)malloc(sizeof(struct Node));
+
+    if (test == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        free(test);
+        return 0;
+    }
+}
+
+void insert(char s[])
+{
+    struct Node *newNode;
+
+    if (isFull())
+    {
+        printf("Queue Overflow! Memory is full.\n");
+        return;
+    }
+
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    strcpy(newNode->data, s);
+    newNode->next = NULL;
+
+    if (front == NULL)
+    {
+        front = newNode;
+        rear = newNode;
+    }
+    else
+    {
+        rear->next = newNode;
+        rear = newNode;
+    }
+
+    printf("%s inserted.\n", s);
+}
+
+void delete_element()
+{
+    struct Node *temp;
+
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    temp = front;
+    printf("%s deleted.\n", temp->data);
+    front = front->next;
+
+    if (front == NULL)
+    {
+        rear = NULL;
+    }
+
+    free(temp);
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Front element: %s\n", front->data);
+}
+
+int main()
+{
+    int choice;
+    char value[20];
+
+    while (1)
+    {
+        printf("\n--- QUEUE MENU ---\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the string to insert: ");
+            scanf("%s", value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+
+
+</pre>
+            </ol>
+      </div>
+
+      <!--5 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="5">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF CIRCULAR QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+</h3>
+                  </li>
+                  <button onclick="Code('code5')">Show code</button>
+                  <pre id="code5" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int queue[5];
+int front = 0;
+int rear = -1;
+int count = 0;
+int size = 5;
+
+int isEmpty()
+{
+    if (count == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (count == size)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insert(int x)
+{
+    if (isFull())
+    {
+        printf("Queue Overflow! The queue is full.\n");
+        return;
+    }
+    rear = (rear + 1) % size;
+    queue[rear] = x;
+    count++;
+    printf("%d inserted.\n", x);
+}
+
+void delete_element()
+{
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+    printf("%d deleted.\n", queue[front]);
+    front = (front + 1) % size;
+    count--;
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Front element: %d\n", queue[front]);
+}
+
+int main()
+{
+    int choice, value;
+
+    while (1)
+    {
+        printf("\n--- CIRCULAR QUEUE MENU ---\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the value to insert: ");
+            scanf("%d", &value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+</pre>
+            </ol>
+      </div>
+
+      <!--6 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="6">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF CIRCULAR QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+ </li>
+                  <button onclick="Code('code6')">Show code</button>
+                  <pre id="code6" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char queue[5][20];
+int front = 0;
+int rear = -1;
+int count = 0;
+int size = 5;
+
+int isEmpty()
+{
+    if (count == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (count == size)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insert(char s[])
+{
+    if (isFull())
+    {
+        printf("Queue Overflow! The queue is full.\n");
+        return;
+    }
+    rear = (rear + 1) % size;
+    strcpy(queue[rear], s);
+    count++;
+    printf("%s inserted.\n", s);
+}
+
+void delete_element()
+{
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+    printf("%s deleted.\n", queue[front]);
+    front = (front + 1) % size;
+    count--;
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Front element: %s\n", queue[front]);
+}
+
+int main()
+{
+    int choice;
+    char value[20];
+
+    while (1)
+    {
+        printf("\n--- CIRCULAR QUEUE MENU ---\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the string to insert: ");
+            scanf("%s", value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+
+      <!--7 question of Object Oriented Programming -->
+      <div class="ques">
+            <ol start="7">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF PRIORITY QUEUE IN AN INTEGER ARRAY 
+(INSERT, DELETE, PEEK, ISEMPTY, ISFULL)</li>
+                  <button onclick="Code('code7')">Show code</button>
+                  <pre id="code7" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int queue[5];
+int count = 0;
+int size = 5;
+
+int isEmpty()
+{
+    if (count == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (count == size)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insert(int value)
+{
+    int i;
+
+    if (isFull())
+    {
+        printf("Queue Overflow!\n");
+        return;
+    }
+
+    i = count - 1;
+
+    while (i >= 0 && queue[i] > value)
+    {
+        queue[i + 1] = queue[i];
+        i--;
+    }
+
+    queue[i + 1] = value;
+    count++;
+    printf("%d inserted.\n", value);
+}
+
+void delete_element()
+{
+    int i;
+
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    printf("%d deleted highest priority.\n", queue[0]);
+
+    for (i = 0; i < count - 1; i++)
+    {
+        queue[i] = queue[i + 1];
+    }
+    count--;
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Highest priority element: %d\n", queue[0]);
+}
+
+int main()
+{
+    int choice, value;
+
+    while (1)
+    {
+        printf("\n--- PRIORITY QUEUE MENU ---\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the value to insert: ");
+            scanf("%d", &value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+      <!--8 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="8">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF PRIORITY QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+ </li>
+                  <button onclick="Code('code8')">Show code</button>
+                  <pre id="code8" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char queue[5][20];
+int count = 0;
+int size = 5;
+
+int isEmpty()
+{
+    if (count == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (count == size)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insert(char s[])
+{
+    int i;
+
+    if (isFull())
+    {
+        printf("Queue Overflow! The queue is full.\n");
+        return;
+    }
+
+    i = count - 1;
+
+    while (i >= 0 && strcmp(queue[i], s) > 0)
+    {
+        strcpy(queue[i + 1], queue[i]);
+        i--;
+    }
+
+    strcpy(queue[i + 1], s);
+    count++;
+    printf("%s inserted.\n", s);
+}
+
+void delete_element()
+{
+    int i;
+
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    printf("%s deleted.\n", queue[0]);
+
+    for (i = 0; i < count - 1; i++)
+    {
+        strcpy(queue[i], queue[i + 1]);
+    }
+    count--;
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Highest priority element: %s\n", queue[0]);
+}
+
+int main()
+{
+    int choice;
+    char value[20];
+
+    while (1)
+    {
+        printf("\n1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the string to insert: ");
+            scanf("%s", value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+<hr>
+
+</pre>
+            </ol>
+      </div>
+
+
+      <!--9 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="9">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF DOUBLE ENDED QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+ </h3>
+                  </li>
+                  <button onclick="Code('code9')">Show code</button>
+                  <pre id="code9" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int queue[10];
+int count = 0;
+int size = 5;
+
+int isEmpty()
+{
+    if (count == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (count == size)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insertFront(int value)
+{
+    int i;
+
+    if (isFull())
+    {
+        printf("Queue Overflow!\n");
+        return;
+    }
+
+    for (i = count; i > 0; i--)
+    {
+        queue[i] = queue[i - 1];
+    }
+
+    queue[0] = value;
+    count++;
+    printf("%d inserted at front.\n", value);
+}
+
+void insertRear(int value)
+{
+    if (isFull())
+    {
+        printf("Queue Overflow! The queue is full.\n");
+        return;
+    }
+
+    queue[count] = value;
+    count++;
+    printf("%d inserted at rear.\n", value);
+}
+
+void deleteFront()
+{
+    int i;
+
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    printf("%d deleted from front.\n", queue[0]);
+
+    for (i = 0; i < count - 1; i++)
+    {
+        queue[i] = queue[i + 1];
+    }
+
+    count--;
+}
+
+void deleteRear()
+{
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    printf("%d deleted from rear.\n", queue[count - 1]);
+    count--;
+}
+
+void peekFront()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Front element: %d\n", queue[0]);
+}
+
+void peekRear()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Rear element: %d\n", queue[count - 1]);
+}
+
+int main()
+{
+    int choice, value;
+
+    while (1)
+    {
+        printf("\n1. Insert Front\n");
+        printf("2. Insert Rear\n");
+        printf("3. Delete Front\n");
+        printf("4. Delete Rear\n");
+        printf("5. Peek Front\n");
+        printf("6. Peek Rear\n");
+        printf("7. IsEmpty\n");
+        printf("8. IsFull\n");
+        printf("9. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the value to insert: ");
+            scanf("%d", &value);
+            insertFront(value);
+        }
+        else if (choice == 2)
+        {
+            printf("Enter the value to insert: ");
+            scanf("%d", &value);
+            insertRear(value);
+        }
+        else if (choice == 3)
+        {
+            deleteFront();
+        }
+        else if (choice == 4)
+        {
+            deleteRear();
+        }
+        else if (choice == 5)
+        {
+            peekFront();
+        }
+        else if (choice == 6)
+        {
+            peekRear();
+        }
+        else if (choice == 7)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 8)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 9)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+
+      <!--10 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="10">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF DOUBLE ENDED QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+ </h3>
+                  </li>
+                  <button onclick="Code('code10')">Show code</button>
+                  <pre id="code10" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char queue[5][20];
+int count = 0;
+int size = 5;
+
+int isEmpty()
+{
+    if (count == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (count == size)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insertFront(char s[])
+{
+    int i;
+
+    if (isFull())
+    {
+        printf("Queue Overflow! The queue is full.\n");
+        return;
+    }
+
+    for (i = count; i > 0; i--)
+    {
+        strcpy(queue[i], queue[i - 1]);
+    }
+
+    strcpy(queue[0], s);
+    count++;
+    printf("%s inserted at front.\n", s);
+}
+
+void insertRear(char s[])
+{
+    if (isFull())
+    {
+        printf("Queue Overflow! The queue is full.\n");
+        return;
+    }
+
+    strcpy(queue[count], s);
+    count++;
+    printf("%s inserted at rear.\n", s);
+}
+
+void deleteFront()
+{
+    int i;
+
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    printf("%s deleted from front.\n", queue[0]);
+
+    for (i = 0; i < count - 1; i++)
+    {
+        strcpy(queue[i], queue[i + 1]);
+    }
+
+    count--;
+}
+
+void deleteRear()
+{
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    printf("%s deleted from rear.\n", queue[count - 1]);
+    count--;
+}
+
+void peekFront()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Front element: %s\n", queue[0]);
+}
+
+void peekRear()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Rear element: %s\n", queue[count - 1]);
+}
+
+int main()
+{
+    int choice;
+    char value[20];
+
+    while (1)
+    {
+        printf("\n1. Insert Front\n");
+        printf("2. Insert Rear\n");
+        printf("3. Delete Front\n");
+        printf("4. Delete Rear\n");
+        printf("5. Peek Front\n");
+        printf("6. Peek Rear\n");
+        printf("7. IsEmpty\n");
+        printf("8. IsFull\n");
+        printf("9. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the string to insert: ");
+            scanf("%s", value);
+            insertFront(value);
+        }
+        else if (choice == 2)
+        {
+            printf("Enter the string to insert: ");
+            scanf("%s", value);
+            insertRear(value);
+        }
+        else if (choice == 3)
+        {
+            deleteFront();
+        }
+        else if (choice == 4)
+        {
+            deleteRear();
+        }
+        else if (choice == 5)
+        {
+            peekFront();
+        }
+        else if (choice == 6)
+        {
+            peekRear();
+        }
+        else if (choice == 7)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 8)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 9)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}   
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+
+      <!--11 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="11">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF PRIORITY QUEUE DYNAMICALLY OF INTEGERS (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+
+                        </h3></li>
+                  <button onclick="Code('code11')">Show code</button>
+                  <pre id="code11" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+struct Node *front = NULL;
+
+int isEmpty()
+{
+    if (front == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    struct Node *test = (struct Node *)malloc(sizeof(struct Node));
+
+    if (test == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        free(test);
+        return 0;
+    }
+}
+
+void insert(int value)
+{
+    struct Node *newNode;
+    struct Node *temp;
+
+    if (isFull())
+    {
+        printf("Queue Overflow! Memory is full.\n");
+        return;
+    }
+
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if (front == NULL || value < front->data)
+    {
+        newNode->next = front;
+        front = newNode;
+    }
+    else
+    {
+        temp = front;
+
+        while (temp->next != NULL && temp->next->data <= value)
+        {
+            temp = temp->next;
+        }
+
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
+    printf("%d inserted.\n", value);
+}
+
+void delete_element()
+{
+    struct Node *temp;
+
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    temp = front;
+    printf("%d deleted.\n", temp->data);
+    front = front->next;
+    free(temp);
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Highest priority element: %d\n", front->data);
+}
+
+int main()
+{
+    int choice, value;
+
+    while (1)
+    {
+        printf("\n1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the value to insert: ");
+            scanf("%d", &value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+
+      <!--12 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="12">
+                  <li>
+                        <h3>IMPLEMENT THE OPERATIONS OF PRIORITY QUEUE DYNAMICALLY OF STRING (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+                        </h3>  </li>
+                  <button onclick="Code('code12')">Show code</button>
+                  <pre id="code12" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Node
+{
+    char data[20];
+    struct Node *next;
+};
+
+struct Node *front = NULL;
+
+int isEmpty()
+{
+    if (front == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    struct Node *test = (struct Node *)malloc(sizeof(struct Node));
+
+    if (test == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        free(test);
+        return 0;
+    }
+}
+
+void insert(char s[])
+{
+    struct Node *newNode;
+    struct Node *temp;
+
+    if (isFull())
+    {
+        printf("Queue Overflow! Memory is full.\n");
+        return;
+    }
+
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    strcpy(newNode->data, s);
+    newNode->next = NULL;
+
+    if (front == NULL || strcmp(s, front->data) < 0)
+    {
+        newNode->next = front;
+        front = newNode;
+    }
+    else
+    {
+        temp = front;
+
+        while (temp->next != NULL && strcmp(temp->next->data, s) <= 0)
+        {
+            temp = temp->next;
+        }
+
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
+    printf("%s inserted.\n", s);
+}
+
+void delete_element()
+{
+    struct Node *temp;
+
+    if (isEmpty())
+    {
+        printf("Queue Underflow! The queue is empty.\n");
+        return;
+    }
+
+    temp = front;
+    printf("%s deleted.\n", temp->data);
+    front = front->next;
+    free(temp);
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The queue is empty.\n");
+        return;
+    }
+    printf("Highest priority element: %s\n", front->data);
+}
+
+int main()
+{
+    int choice;
+    char value[20];
+
+    while (1)
+    {
+        printf("\n1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the string to insert: ");
+            scanf("%s", value);
+            insert(value);
+        }
+        else if (choice == 2)
+        {
+            delete_element();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the queue is empty.\n");
+            }
+            else
+            {
+                printf("No, the queue is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the queue is full.\n");
+            }
+            else
+            {
+                printf("No, the queue is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp>
+</pre>
+            </ol>
+      </div>
+
+
+      <!--13 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="13">
+                  <li>
+                        <h3>Length of the longest valid substring</h3>
+                  </li>
+                  <button onclick="Code('code13')">Show code</button>
+                  <pre id="code13" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+int queue[100];
+int count = 0;
+
+void insertRear(int x)
+{
+    queue[count] = x;
+    count++;
+}
+
+void deleteRear()
+{
+    count--;
+}
+
+int main()
+{
+    char str[100];
+    int i, len;
+    int maxLen = 0;
+    int currLen;
+
+    printf("Enter the string: ");
+    scanf("%s", str);
+
+    len = strlen(str);
+
+    insertRear(-1);
+
+    for (i = 0; i < len; i++)
+    {
+        if (str[i] == '(')
+        {
+            insertRear(i);
+        }
+        else
+        {
+            deleteRear();
+
+            if (count == 0)
+            {
+                insertRear(i);
+            }
+            else
+            {
+                currLen = i - queue[count - 1];
+
+                if (currLen > maxLen)
+                {
+                    maxLen = currLen;
+                }
+            }
+        }
+    }
+
+    printf("Length of the longest valid substring: %d\n", maxLen);
+
+    return 0;
+}
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+
+      <!--14 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="14">
+                  <li>
+                        <h3>Find the Next Greater Element.</h3>
+                  </li>
+                  <button onclick="Code('code14')">Show code</button>
+                  <pre id="code14" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+#include <stdio.h>
+
+int queue[50];
+int count = 0;
+
+void insertRear(int value)
+{
+    queue[count] = value;
+    count++;
+}
+
+void deleteRear()
+{
+    count--;
+}
+
+int main()
+{
+    int arr[50];
+    int result[50];
+    int n, i;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = n - 1; i >= 0; i--)
+    {
+        while (count != 0 && queue[count - 1] <= arr[i])
+        {
+            deleteRear();
+        }
+
+        if (count == 0)
+        {
+            result[i] = -1;
+        }
+        else
+        {
+            result[i] = queue[count - 1];
+        }
+
+        insertRear(arr[i]);
+    }
+
+    printf("Next Greater Elements:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d -> %d\n", arr[i], result[i]);
+    }
+
+    return 0;
+}
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+
+      <!--15 question of Object Oriented Programming -->
+      <div class="ques">
+
+
+            <ol start="15">
+                  <li>
+                        <h3>Find Next Smaller Element</h3>
+                  </li>
+                  <button onclick="Code('code15')">Show code</button>
+                  <pre id="code15" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int queue[100];
+int count = 0;
+
+void insertRear(int x)
+{
+    queue[count] = x;
+    count++;
+}
+
+void deleteRear()
+{
+    count--;
+}
+
+int main()
+{
+    int arr[100];
+    int result[100];
+    int n, i;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = n - 1; i >= 0; i--)
+    {
+        while (count != 0 && queue[count - 1] >= arr[i])
+        {
+            deleteRear();
+        }
+
+        if (count == 0)
+        {
+            result[i] = -1;
+        }
+        else
+        {
+            result[i] = queue[count - 1];
+        }
+
+        insertRear(arr[i]);
+    }
+
+    printf("Next Smaller Elements:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d -> %d\n", arr[i], result[i]);
+    }
+
+    return 0;
+}
+</xmp>
+
+</pre>
+            </ol>
+      </div>
+
+      <script src="script.js"></script>
+</body>
+
+</html

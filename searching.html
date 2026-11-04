@@ -1,0 +1,557 @@
+    <!DOCTYPE>
+<html lang="en">
+<head>
+ 
+	<title> Basic Construction Programming </title>
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+   
+      <marquee direction="left" loop="" behavior=scroll >Unwrap the Magic of Programming
+            with C Language – Enchance Your Skills With Programming</marquee>
+    
+
+    
+<div class="header">
+    <nav>
+        <ul>   
+            <li><strong>Practice Question</strong></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+    
+</header>
+
+
+<!--1 question of Basic Construction Programming -->
+<div class="ques">
+
+
+<ol>
+    <li><h3>ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH ITERATION.
+
+</h3></li>
+<button onclick="Code('code1')">Show code</button>
+<pre id="code1" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int main()
+{
+    int arr[50];
+    int n, i, key;
+    int found = 0;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the value to search: ");
+    scanf("%d", &key);
+
+    for (i = 0; i < n; i++)
+    {
+        if (arr[i] == key)
+        {
+            printf("%d is found at index %d (position %d).\n", key, i, i + 1);
+            found = 1;
+            break;
+        }
+    }
+
+    if (found == 0)
+    {
+        printf("%d is not found in the array.\n", key);
+    }
+
+    return 0;
+}
+</xmp> 
+<hr>
+
+</pre>
+</ol>
+</div>
+
+
+<!--2 question of Basic Construction Programming -->
+<div class="ques">
+    <ol start="2">
+
+    <li><h3>ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION.
+
+</h3><br></li>
+<button onclick="Code('code2')">Show code</button>
+<pre id="code2" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+char str[50];
+char key;
+
+int linearSearch(int index)
+{
+    if (str[index] == '\0')
+    {
+        return -1;
+    }
+
+    if (str[index] == key)
+    {
+        return index;
+    }
+
+    return linearSearch(index + 1);
+}
+
+int main()
+{
+    int result;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Enter the character to search: ");
+    scanf(" %c", &key);
+
+    result = linearSearch(0);
+
+    if (result == -1)
+    {
+        printf("'%c' is not found in the string.\n", key);
+    }
+    else
+    {
+        printf("'%c' is found at index %d (position %d).\n", key, result, result + 1);
+    }
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</div>
+
+<!--3 question of Basic Construction Programming -->
+<div class="ques">
+    <ol start="3">
+<li ><h3>ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION.
+
+</h3></li>
+
+<button onclick="Code('code3')">Show code</button>
+<pre id="code3" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int arr[50];
+int n;
+int key;
+
+int linearSearch(int index)
+{
+    if (index == n)
+    {
+        return -1;
+    }
+
+    if (arr[index] == key)
+    {
+        return index;
+    }
+
+    return linearSearch(index + 1);
+}
+
+int main()
+{
+    int i, result;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the value to search: ");
+    scanf("%d", &key);
+
+    result = linearSearch(0);
+
+    if (result == -1)
+    {
+        printf("%d is not found in the array.\n", key);
+    }
+    else
+    {
+        printf("%d is found at index %d (position %d).\n", key, result, result + 1);
+    }
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>   
+</div>
+
+
+<!--4 question of Basic Construction Programming -->
+<div class="ques">
+    <ol start="4">
+<li ><h3>ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM LINEAR SEARCH ALGORITHM THROUGH ITERATION.
+
+<button onclick="Code('code4')">Show code</button>
+<pre id="code4" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int main()
+{
+    char str[100];
+    char key;
+    int i;
+    int found = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Enter the character to search: ");
+    scanf(" %c", &key);
+
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] == key)
+        {
+            printf("'%c' is found at index %d (position %d).\n", key, i, i + 1);
+            found = 1;
+            break;
+        }
+    }
+
+    if (found == 0)
+    {
+        printf("'%c' is not found in the string.\n", key);
+    }
+
+    return 0;
+}
+
+</xmp>
+<hr>
+
+</pre>
+</ol>   
+</div>
+
+<!--5 question of Basic Construction Programming -->
+<div class="ques">
+
+
+<ol start="5">
+    <li><h3>ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM BINARY SEARCH ALGORITHM THROUGH ITERATION.
+
+</h3></li>
+<button onclick="Code('code5')">Show code</button>
+<pre id="code5" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int main()
+{
+    int arr[50];
+    int n, i, key;
+    int low, high, mid;
+    int found = 0;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter the elements in ascending (sorted) order:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the value to search: ");
+    scanf("%d", &key);
+
+    low = 0;
+    high = n - 1;
+
+    while (low <= high)
+    {
+        mid = (low + high) / 2;
+
+        if (arr[mid] == key)
+        {
+            printf("%d is found at index %d (position %d).\n", key, mid, mid + 1);
+            found = 1;
+            break;
+        }
+        else if (arr[mid] < key)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+
+    if (found == 0)
+    {
+        printf("%d is not found in the array.\n", key);
+    }
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+<!--6 question of Basic Construction Programming -->
+<div class="ques">
+
+
+<ol start="6">
+    <li><h3>ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM BINARY SEARCH ALGORITHM THROUGH RECURSION
+
+</h3></li>
+<button onclick="Code('code6')">Show code</button>
+<pre id="code6" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char str[50];
+char key;
+
+int binarySearch(int low, int high)
+{
+    int mid;
+
+    if (low > high)
+    {
+        return -1;
+    }
+
+    mid = (low + high) / 2;
+
+    if (str[mid] == key)
+    {
+        return mid;
+    }
+    else if (str[mid] < key)
+    {
+        return binarySearch(mid + 1, high);
+    }
+    else
+    {
+        return binarySearch(low, mid - 1);
+    }
+}
+
+int main()
+{
+    int len, result;
+
+    printf("Enter a sorted string (ascending order, no spaces): ");
+    scanf("%s", str);
+
+    printf("Enter the character to search: ");
+    scanf(" %c", &key);
+
+    len = strlen(str);
+
+    result = binarySearch(0, len - 1);
+
+    if (result == -1)
+    {
+        printf("'%c' is not found in the string.\n", key);
+    }
+    else
+    {
+        printf("'%c' is found at index %d (position %d).\n", key, result, result + 1);
+    }
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--7 question of Basic Construction Programming  -->
+<div class="ques">
+
+
+<ol start="7">
+    <li><h3>ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM BINARY SEARCH ALGORITHM THROUGH RECURSION.
+</h3></li>
+<button onclick="Code('code7')">Show code</button>
+<pre id="code7" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int arr[50];
+int n;
+int key;
+
+int binarySearch(int low, int high)
+{
+    int mid;
+
+    if (low > high)
+    {
+        return -1;
+    }
+
+    mid = (low + high) / 2;
+
+    if (arr[mid] == key)
+    {
+        return mid;
+    }
+    else if (arr[mid] < key)
+    {
+        return binarySearch(mid + 1, high);
+    }
+    else
+    {
+        return binarySearch(low, mid - 1);
+    }
+}
+
+int main()
+{
+    int i, result;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter the elements in ascending (sorted) order:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the value to search: ");
+    scanf("%d", &key);
+
+    result = binarySearch(0, n - 1);
+
+    if (result == -1)
+    {
+        printf("%d is not found in the array.\n", key);
+    }
+    else
+    {
+        printf("%d is found at index %d (position %d).\n", key, result, result + 1);
+    }
+
+    return 0;
+}
+</xmp>
+<hr>
+
+</pre>
+</ol>
+</div>
+
+<!--8 question of Basic Construction Programming  -->
+<div class="ques">
+
+
+<ol start="8">
+    <li><h3>ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM BINARY SEARCH ALGORITHM THROUGH ITERATION.
+</h3></li>
+<button onclick="Code('code8')">Show code</button>
+<pre id="code8" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[100];
+    char key;
+    int len, low, high, mid;
+    int found = 0;
+
+    printf("Enter a sorted string (ascending order, no spaces): ");
+    scanf("%s", str);
+
+    printf("Enter the character to search: ");
+    scanf(" %c", &key);
+
+    len = strlen(str);
+    low = 0;
+    high = len - 1;
+
+    while (low <= high)
+    {
+        mid = (low + high) / 2;
+
+        if (str[mid] == key)
+        {
+            printf("'%c' is found at index %d (position %d).\n", key, mid, mid + 1);
+            found = 1;
+            break;
+        }
+        else if (str[mid] < key)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+
+    if (found == 0)
+    {
+        printf("'%c' is not found in the string.\n", key);
+    }
+
+    return 0;
+}
+</xmp>
+
+
+</pre>
+</ol>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+</body>
+
+</html

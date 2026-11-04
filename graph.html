@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+	<title> Graphs </title>
+	<link rel="stylesheet" href="styles.css">
+        
+
+</head>
+
+<body>
+        <header>
+    <marquee direction="left">
+        Unwrap the Magic of Programming with C Language – Enhance Your Skills With Programming
+    </marquee>
+
+
+<div class="header">
+    <nav>
+        <ul>   
+            <li><strong>Practice Question</strong></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+    
+</header>
+
+
+<!--1 question of graph -->
+<div class="ques">
+
+
+<ol>
+    <li><h3>ENTER THE VERTICES AND EDGES AND REPRESENT IN ADJACENCY MATRIX AND PRINT IT..</h3></li>
+<button onclick="Code('code1')">Show code</button>
+<pre id="code1" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int matrix[10][10];
+
+int main()
+{
+    int v, e, i, j, a, b;
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &v);
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &e);
+
+    for (i = 0; i < v; i++)
+    {
+        for (j = 0; j < v; j++)
+        {
+            matrix[i][j] = 0;
+        }
+    }
+
+    for (i = 0; i < e; i++)
+    {
+        printf("Enter edge %d (two vertices, 0 to %d): ", i + 1, v - 1);
+        scanf("%d %d", &a, &b);
+
+        if (a < 0 || a >= v || b < 0 || b >= v)
+        {
+            printf("Invalid vertex! Enter this edge again.\n");
+            i--;
+        }
+        else
+        {
+            matrix[a][b] = 1;
+            matrix[b][a] = 1;
+        }
+    }
+
+    printf("\nAdjacency Matrix:\n");
+
+    printf("   ");
+    for (i = 0; i < v; i++)
+    {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    for (i = 0; i < v; i++)
+    {
+        printf("%d  ", i);
+        for (j = 0; j < v; j++)
+        {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+} 
+</xmp> 
+</pre>
+</ol>
+</div>
+
+<!--2 question of Graph -->
+<div class="ques">
+    <ol start="2">
+
+    <li><h3> TRAVERSE THE ADJACENT MATRIX WITH DEPTH FIRST SEARCH.</h3><br></li>
+<button onclick="Code('code2')">Show code</button>
+<pre id="code2" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int matrix[10][10];
+int visited[10];
+int v;
+
+void dfs(int start)
+{
+    int i;
+
+    visited[start] = 1;
+    printf("%d ", start);
+
+    for (i = 0; i < v; i++)
+    {
+        if (matrix[start][i] == 1 && visited[i] == 0)
+        {
+            dfs(i);
+        }
+    }
+}
+
+int main()
+{
+    int e, i, j, a, b, start;
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &v);
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &e);
+
+    for (i = 0; i < v; i++)
+    {
+        visited[i] = 0;
+        for (j = 0; j < v; j++)
+        {
+            matrix[i][j] = 0;
+        }
+    }
+
+    for (i = 0; i < e; i++)
+    {
+        printf("Enter edge %d (two vertices, 0 to %d): ", i + 1, v - 1);
+        scanf("%d %d", &a, &b);
+
+        if (a < 0 || a >= v || b < 0 || b >= v)
+        {
+            printf("Invalid vertex! Enter this edge again.\n");
+            i--;
+        }
+        else
+        {
+            matrix[a][b] = 1;
+            matrix[b][a] = 1;
+        }
+    }
+
+    printf("\nAdjacency Matrix:\n");
+    printf("   ");
+    for (i = 0; i < v; i++)
+    {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    for (i = 0; i < v; i++)
+    {
+        printf("%d  ", i);
+        for (j = 0; j < v; j++)
+        {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nEnter the starting vertex: ");
+    scanf("%d", &start);
+
+    if (start < 0 || start >= v)
+    {
+        printf("Invalid starting vertex.\n");
+        return 0;
+    }
+
+    printf("DFS traversal: ");
+    dfs(start);
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+</pre>
+</div>
+
+<!--3 question of Graph -->
+<div class="ques">
+    <ol start="3">
+<li ><h3>TRAVERSE THE ADJACENT MATRIX WITH BREADTH FIRST SEARCH.</h3></li>
+
+<button onclick="Code('code3')">Show code</button>
+<pre id="code3" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int matrix[10][10];
+int visited[10];
+int v;
+
+int queue[10];
+int front = 0;
+int rear = -1;
+
+int isEmpty()
+{
+    if (front > rear)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void insert(int x)
+{
+    rear++;
+    queue[rear] = x;
+}
+
+int delete_element()
+{
+    int x = queue[front];
+    front++;
+    return x;
+}
+
+void bfs(int start)
+{
+    int curr, i;
+
+    visited[start] = 1;
+    insert(start);
+
+    while (isEmpty() == 0)
+    {
+        curr = delete_element();
+        printf("%d ", curr);
+
+        for (i = 0; i < v; i++)
+        {
+            if (matrix[curr][i] == 1 && visited[i] == 0)
+            {
+                visited[i] = 1;
+                insert(i);
+            }
+        }
+    }
+}
+
+int main()
+{
+    int e, i, j, a, b, start;
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &v);
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &e);
+
+    for (i = 0; i < v; i++)
+    {
+        visited[i] = 0;
+        for (j = 0; j < v; j++)
+        {
+            matrix[i][j] = 0;
+        }
+    }
+
+    for (i = 0; i < e; i++)
+    {
+        printf("Enter edge %d (two vertices, 0 to %d): ", i + 1, v - 1);
+        scanf("%d %d", &a, &b);
+
+        if (a < 0 || a >= v || b < 0 || b >= v)
+        {
+            printf("Invalid vertex! Enter this edge again.\n");
+            i--;
+        }
+        else
+        {
+            matrix[a][b] = 1;
+            matrix[b][a] = 1;
+        }
+    }
+
+    printf("\nAdjacency Matrix:\n");
+    printf("   ");
+    for (i = 0; i < v; i++)
+    {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    for (i = 0; i < v; i++)
+    {
+        printf("%d  ", i);
+        for (j = 0; j < v; j++)
+        {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nEnter the starting vertex: ");
+    scanf("%d", &start);
+
+    if (start < 0 || start >= v)
+    {
+        printf("Invalid starting vertex.\n");
+        return 0;
+    }
+
+    printf("BFS traversal: ");
+    bfs(start);
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>   
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

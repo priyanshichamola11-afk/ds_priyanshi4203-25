@@ -1,0 +1,992 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+ 
+	<title> Inheritance</title>
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+   
+      <marquee direction="left" loop="" behavior=scroll >Unwrap the Magic of Programming
+            with C++ Language – Enchance Your Skills With Programming</marquee>
+    
+
+            <div class="header">
+    <nav>
+        <ul>   
+            <li><strong>Practice Question</strong></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+    
+</header>
+
+
+<!--1 question of Inheritance -->
+<div class="ques">
+
+
+<ol>
+    <li><h3>CREATE A STACK IMPLEMENTING THE OPERATIONS ON AN INTEGER ARRAY
+(PUSH, POP, PEEK, ISEMPTY, ISFULL) </h3></li>
+<button onclick="Code('code1')">Show code</button>
+<pre id="code1" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int stack[5];
+int top = -1;
+ int SIZE = 5;
+
+int isEmpty()
+{
+    if (top == -1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (top == SIZE - 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void push(int x)
+{
+    if (isFull())
+    {
+        printf("Stack Overflow! The stack is full.\n");
+        return;
+    }
+    top++;
+    stack[top] = x;
+    printf("%d pushed.\n", x);
+}
+
+void pop()
+{
+    if (isEmpty())
+    {
+        printf("Stack Underflow! The stack is empty.\n");
+        return;
+    }
+    printf("%d popped.\n", stack[top]);
+    top--;
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The stack is empty.\n");
+        return;
+    }
+    printf("Top element: %d\n", stack[top]);
+}
+
+int main()
+{
+    int choice, value;
+
+    while (1)
+    {
+        printf("\nSTACK MENU\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the value to push: ");
+            scanf("%d", &value);
+            push(value);
+        }
+        else if (choice == 2)
+        {
+            pop();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the stack is empty.\n");
+            }
+            else
+            {
+                printf("No, the stack is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the stack is full.\n");
+            }
+            else
+            {
+                printf("No, the stack is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+</xmp> 
+
+</pre>
+</ol>
+</div>
+
+<!--2 question of Inheritance -->
+<div class="ques">
+    <ol start="2">
+
+    <li><h3> CREATE A STACK IMPLEMENTING THE OPERATIONS ON THE CHARACTERS ARRAY (PUSH, POP, PEEK, ISEMPTY, ISFULL)
+
+</h3><br></li>
+<button onclick="Code('code2')">Show code</button>
+<pre id="code2" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int stack[5];
+int top = -1;
+ 
+
+int isEmpty()
+{
+    if (top == -1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    if (top == 4)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void push(int ch)
+{
+    if (isFull())
+    {
+        printf("Stack Overflow The stack is full.\n");
+        return;
+    }
+    top++;
+    stack[top] = ch;
+    printf("%c pushed.\n", ch);
+}
+
+void pop()
+{
+    if (isEmpty())
+    {
+        printf("Stack Underflow! The stack is empty.\n");
+        return;
+    }
+    printf("%c popped.\n", stack[top]);
+    top--;
+}
+
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("The stack is empty.\n");
+        return;
+    }
+    printf("Top element: %c\n", stack[top]);
+}
+
+int main()
+{
+    int choice;
+    char ch;
+
+    while (1)
+    {
+        printf("\nSTACK MENU\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Peek\n");
+        printf("4. IsEmpty\n");
+        printf("5. IsFull\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter the  character to push: ");
+            scanf(" %c",&ch);
+            push(ch);
+        }
+        else if (choice == 2)
+        {
+            pop();
+        }
+        else if (choice == 3)
+        {
+            peek();
+        }
+        else if (choice == 4)
+        {
+            if (isEmpty())
+            {
+                printf("Yes, the stack is empty.\n");
+            }
+            else
+            {
+                printf("No, the stack is not empty.\n");
+            }
+        }
+        else if (choice == 5)
+        {
+            if (isFull())
+            {
+                printf("Yes, the stack is full.\n");
+            }
+            else
+            {
+                printf("No, the stack is not full.\n");
+            }
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting the program.\n");
+            return 0;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+}
+
+</xmp> 
+
+</pre>
+</div>
+
+<!--3 question of Inheritance -->
+<div class="ques">
+    <ol start="3">
+<li ><h3>CREATE A STACK IMPLEMENTING THE OPERATIONS ON AN INTEGER NODES (DYNAMICALLY)
+(PUSH, POP, PEEK, ISEMPTY, ISFULL)
+</h3></li>
+
+<button onclick="Code('code3')">Show code</button>
+<pre id="code3" style="display:none;">
+    <xmp>
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+int isEmpty()
+{
+    if (start == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    struct Node *test = (struct Node *)malloc(sizeof(struct Node));
+
+    if (test == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        free(test);
+        return 0;
+    }
+}
+
+struct Node *start=NULL, *temp=NULL;
+
+int menu(){
+    int op=0;
+
+    printf("\nEnter the option ,which operation you want to perform\n");
+    printf("1.Push\n2.Pop\n3.Peek\n4.IsEmpty\n5.IsFull\n6.Exit\n");
+    scanf("%d", &op);
+
+    return op;
+}
+
+void push()
+{
+int value=0;
+
+    temp = (struct Node *)malloc(sizeof(struct Node));
+
+    if (temp != NULL)
+    {
+        printf("\nEnter the value you want in your stack\n");
+        scanf("%d",&value);
+
+        temp->data = value;
+        temp->next = start;
+        start = temp;
+        
+        printf("Node is made successfully");
+        
+    }
+    else
+    {
+        printf("Memory didn't Allocate");
+    }
+}
+
+void pop()
+{
+   
+    if (start == NULL)
+    {
+        printf("\nStack is empty\n");
+    }
+    else
+    {
+        temp = start;
+        printf("\nElement has been poped: %d", temp->data);
+        start = temp->next;
+        free(temp);
+        
+    }
+}
+
+void peek(){
+    if(start==NULL){
+        printf("Stack is empty");
+    }
+
+    else{
+        printf("Data of the last node you entred: %d", start->data);
+    }
+}
+
+int main()
+{
+    
+    int op;
+    
+
+    while (1)
+    {
+        op=menu();
+        if (op == 1)
+        {
+            push();
+        }
+
+        else if (op == 2)
+        {
+            pop();
+        }
+
+        else if(op==3){
+            peek();
+        }
+
+        else if (op == 4)
+{
+    if (isEmpty())
+    {
+        printf("Stack is empty\n");
+    }
+    else
+    {
+        printf("Stack is not empty\n");
+    }
+}
+
+else if (op == 5)
+{
+    if (isFull())
+    {
+        printf("Stack is full\n");
+    }
+    else
+    {
+        printf("Stack is not full\n");
+    }
+}
+
+else if (op == 6)
+{
+    printf("Exiting....\n");
+    break;
+}
+    }
+    
+}
+
+</xmp> 
+<hr>
+
+</pre>
+</ol>   
+</div>
+
+
+<!--4 question of Inheritance -->
+<div class="ques">
+    <ol start="4">
+<li ><h3>CREATE A STACK IMPLEMENTING THE OPERATIONS ON THE CHARACTERS NODES 
+(DYNAMICALLY) (PUSH, POP, PEEK, ISEMPTY, ISFULL)
+</h3></li>
+
+<button onclick="Code('code4')">Show code</button>
+<pre id="code4" style="display:none;">
+    <xmp>
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+    char data;
+    struct Node *next;
+};
+
+struct Node *start=NULL, *temp=NULL;
+
+int isEmpty()
+{
+    if (start == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int isFull()
+{
+    struct Node *test = (struct Node *)malloc(sizeof(struct Node));
+
+    if (test == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        free(test);
+        return 0;
+    }
+}
+
+int menu(){
+    int op=0;
+
+    printf("\nEnter the option ,which operation you want to perform\n");
+    printf("1.Push\n 2.Pop\n 3.Peek \n 4.Exit\n");
+    scanf("%d", &op);
+
+    return op;
+}
+
+void push()
+{
+char ch;
+
+    temp = (struct Node *)malloc(sizeof(struct Node));
+
+    if (temp != NULL)
+    {
+        printf("\nEnter the character you want in your stack\n");
+        scanf(" %c",&ch);
+
+        temp->data = ch;
+        temp->next = start;
+        start = temp;
+        
+        printf("Node is made successfully");
+        
+    }
+    else
+    {
+        printf("Memory didn't Allocate");
+    }
+}
+
+void pop()
+{
+   
+    if (start == NULL)
+    {
+        printf("\nStack is empty\n");
+    }
+    else
+    {
+        temp = start;
+        printf("\nElement has been poped: %c", temp->data);
+        start = temp->next;
+        free(temp);
+        
+    }
+}
+
+void peek(){
+    if(start==NULL){
+        printf("Stack is empty");
+    }
+
+    else{
+        printf("Data of the last node you entred: %c", start->data);
+    }
+}
+
+int main()
+{
+    
+    int op;
+    
+
+    while (1)
+    {
+        op=menu();
+        if (op == 1)
+        {
+            push();
+        }
+
+        else if (op == 2)
+        {
+            pop();
+        }
+
+        else if(op==3){
+            peek();
+        }
+
+        else if(op==4){
+            printf("Exting....");
+            break;
+        }
+
+        else{
+            printf("Invalid option");
+        }
+    }
+    
+}
+</xmp>
+ 
+
+
+</pre>
+</ol>   
+</div>
+
+<!--5 question of Inheritance -->
+<div class="ques">
+
+
+<ol start="5">
+    <li><h3>ENTER THE STRING FROM THE USER AND REVERSE THE STRING USING STACKS.</h3></li>
+<button onclick="Code('code5')">Show code</button>
+<pre id="code5" style="display:none;">
+    <xmp>
+#include <stdio.h>
+#include <string.h>
+int top = -1;
+char stack[50];
+
+void push(char c)
+{
+    top++;
+    stack[top] = c;
+}
+
+char pop()
+{
+    char c = stack[top];
+    top--;
+    return c;
+}
+
+int main()
+{
+    char str[50];
+    int len = 0, i = 0;
+    
+    printf("Enter a string: ");
+    gets(str);
+
+    len = strlen(str);
+
+    for (i = 0; i < len; i++)
+    {
+        push(str[i]);
+    }
+
+    for (i = 0; i < len; i++)
+{
+    str[i] = pop();
+}
+
+    printf("Reversed order of the string is %s\n", str);
+
+    return 0;
+}
+
+</xmp> 
+</pre>
+</ol>
+</div>
+
+<!--6 question of Inheritance -->
+<div class="ques">
+
+
+<ol start="6">
+    <li><h3>CREATE THE PROGRAM TO MATCH THE SINGLE BRACKET USING STACKS.
+
+</h3></li>
+<button onclick="Code('code6')">Show code</button>
+<pre id="code6" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char stack[50];
+int top = -1;
+
+void push(char c)
+{
+    top++;
+    stack[top] = c;
+}
+
+void pop()
+{
+    top--;
+}
+
+int main()
+{
+    char str[50];
+    int i, len;
+    int error = 0;
+
+    printf("Enter an expression: ");
+    fgets(str, 50, stdin);
+
+    len = strlen(str);
+
+    for (i = 0; i < len; i++)
+    {
+        if (str[i] == '(')
+        {
+            push(str[i]);
+        }
+        else if (str[i] == ')')
+        {
+            if (top == -1)
+            {
+                error = 1;
+                break;
+            }
+            else
+            {
+                pop();
+            }
+        }
+    }
+
+    if (error == 0 && top == -1)
+    {
+        printf("Brackets are balanced.\n");
+    }
+    else
+    {
+        printf("Brackets are NOT balanced.\n");
+    }
+
+    return 0;
+}
+</xmp> 
+</pre>
+</ol>
+</div>
+
+
+<!--7 question of Inheritance -->
+<div class="ques">
+
+
+<ol start="7">
+    <li><h3>CREATE TWO INTEGER STACKS IN A SINGLE ARRAY.
+</h3></li>
+<button onclick="Code('code7')">Show code</button>
+<pre id="code7" style="display:none;">
+<xmp>
+#include<stdio.h>
+#define SIZE 10
+
+int arr[SIZE];
+int top1=-1;
+int top2=SIZE;
+
+int menu(){
+    int op;
+    printf("\nEnter the option ,which operation you want to perform\n");
+    printf("1.Push1\n 2.Pop1\n 3.Push2 \n 4.Pop2\n 5.Exit...\n");
+    scanf("%d", &op);
+    return op;
+}
+void push1(int value){
+    if(top1+1==top2){
+        printf("Stack 1 OverFlow\n");
+    }
+    else{
+        top1++;
+        arr[top1]=value;
+    }
+}
+
+void push2(int value){
+if(top2-1==top1){
+        printf("Stack 2 OverFlow\n");
+    }
+    else{
+        top2--;
+        arr[top2]=value;
+    }
+}
+
+void pop1(){
+    if(top1==-1){
+        printf("Stack 1 is underflow\n");
+    }
+
+    else{
+        printf("%d is the value has been poped from stack 1\n",arr[top1]);
+        top1--;
+    }
+}
+
+void pop2(){
+    if(top2==SIZE){
+        printf("Stack 2 is underflow\n");
+    }
+
+    else{
+        printf("%d is the value has been poped from stack 2\n",arr[top2]);
+        top2++;
+    }
+}
+
+int main(){
+    int op,value;
+    
+
+        while (1)
+    {
+        op=menu();
+        if (op == 1)
+        {
+            printf("Enter the value you wan to store in stack 1: ");
+            scanf("%d",&value);
+            push1(value);
+        }
+
+        else if (op == 2)
+        {
+            pop1();
+        }
+
+        else if(op==3){
+
+            printf("Enter the value you wan to store in stack 2: ");
+            scanf("%d",&value);
+            push2(value);
+        }
+
+        else if(op==4){
+            pop2();
+        }
+
+        else if(op==5){
+            printf("Exiting.....");
+            break;
+        }
+
+        else{
+            printf("Invalid option");
+        }
+    }
+    
+}
+
+</xmp> 
+
+
+</pre>
+</ol>
+</div>
+
+<!--8 question of Inheritance -->
+<div class="ques">
+
+
+<ol start="8">
+    <li><h3>SORT THE STACK IN ASCENDING ORDER USING INTEGER ARRAY.
+</h3></li>
+<button onclick="Code('code8')">Show code</button>
+<pre id="code8" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int stack[50];
+int top = -1;
+
+int temp[50];
+int topT = -1;
+
+void push(int x)
+{
+    top++;
+    stack[top] = x;
+}
+
+int pop()
+{
+    int x = stack[top];
+    top--;
+    return x;
+}
+
+void pushT(int x)
+{
+    topT++;
+    temp[topT] = x;
+}
+
+int popT()
+{
+    int x = temp[topT];
+    topT--;
+    return x;
+}
+
+void sortStack()
+{
+    int x, i;
+
+    while (top != -1)
+    {
+        x = pop();
+
+        while (topT != -1 && temp[topT] > x)
+        {
+            push(popT());
+        }
+
+        pushT(x);
+    }
+
+
+    for (i = 0; i <= topT; i++)
+    {
+        stack[i] = temp[i];
+    }
+    top = topT;
+    topT = -1;
+}
+
+int main()
+{
+    int n, i, value;
+
+    printf("How many elements? ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &value);
+        push(value);
+    }
+
+    sortStack();
+
+    printf("Sorted stack (bottom to top): ");
+    for (i = 0; i <= top; i++)
+    {
+        printf("%d ", stack[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp> 
+
+</pre>
+</ol>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html

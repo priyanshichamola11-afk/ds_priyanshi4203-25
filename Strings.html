@@ -1,0 +1,1068 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+ 
+	<title> Strings </title>
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+   
+      <marquee direction="left" loop="" behavior=scroll >Unwrap the Magic of Programming
+            with C Language – Enchance Your Skills With Programming</marquee>
+    
+
+    
+<div class="header">
+    <nav>
+        <ul>   
+            <li><strong>Practice Question</strong></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+    
+</header>
+
+
+<!--1 question of Strings -->
+<div class="ques">
+
+
+<ol>
+    <li><h3>Enter the string from user and convert in uppercase ?</h3></li>
+<button onclick="Code('code1')">Show code</button>
+<pre id="code1" style="display:none;">
+<xmp>
+#include <stdio.h>
+int main(){
+    char str[100];
+    printf("enter the string: ");
+    gets(str);
+    for(int i=0;str[i]!='\0';i++){
+        if(str[i]>='a'&&str[i]<='z'){
+            str[i]=str[i]-32;
+        }
+    }
+    printf("uppercase string is: %s",str);
+    return 0;
+}
+</xmp> 
+</pre>
+</ol>
+</div>
+
+<!--2 question of Strings -->
+<div class="ques">
+    <ol start="2">
+
+    <li><h3>Enter the string from user and convert in lowercase ?</h3><br></li>
+<button onclick="Code('code2')">Show code</button>
+<pre id="code2" style="display:none;">
+    <xmp>
+#include <stdio.h>
+int main(){
+    char str[100];
+    printf("enter the string: ");
+    gets(str);
+    for(int i=0;str[i]!='\0';i++){
+        if(str[i]>='A'&&str[i]<='Z'){
+            str[i]=str[i]+32;
+        }
+    }
+    printf("lowercase string is: %s",str);
+    return 0;
+}
+</xmp>
+<hr>
+<h2>OUTPUT: </h2>
+Enter string: hello
+After swapping: ehllo
+</pre>
+</div>
+
+<!--3 question of Strings -->
+<div class="ques">
+    <ol start="3">
+<li ><h3>Enter the string from user and convert into sentence case ?
+</h3></li>
+
+<button onclick="Code('code3')">Show code</button>
+<pre id="code3" style="display:none;">
+    <xmp>
+#include <stdio.h>
+int main(){
+    char str[100];
+    printf("enter the string: ");
+    gets(str);
+    if(str[0]>='a'&&str[0]<='z'){
+        str[0]=str[0]-32;
+    }
+    for(int i=1;str[i]!='\0';i++){
+        if(str[i]>='A'&&str[i]<='Z'){
+            str[i]=str[i]+32;
+        }
+    }
+    printf("sentence case is: %s",str);
+    return 0;
+}
+</xmp>
+</pre>
+</ol>   
+</div>
+
+
+<!--4 question of Strings -->
+<div class="ques">
+    <ol start="4">
+<li ><h3>Enter the string from user and convert into title case ?</h3></li>
+
+<button onclick="Code('code4')">Show code</button>
+<pre id="code4" style="display:none;">
+    <xmp>
+#include <stdio.h>
+int main(){
+    char str[100];
+    printf("enter the string: ");
+    gets(str);
+    if(str[0]>='a'&&str[0]<='z'){
+        str[0]=str[0]-32;
+    }
+    for(int i=1;str[i]!='\0';i++){
+        if(str[i-1]==' '&&str[i]>='a'&&str[i]<='z'){
+            str[i]=str[i]-32;
+        }
+        else if(str[i]>='A'&&str[i]<='Z'){
+            str[i]=str[i]+32;
+        }
+    }
+    printf("title case is: %s",str);
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>   
+</div>
+
+<!--5 question of Strings -->
+<div class="ques">
+
+
+<ol start="5">
+    <li><h3>Enter the string from user and convert into toggle case ?</h3></li>
+<button onclick="Code('code5')">Show code</button>
+<pre id="code5" style="display:none;">
+    <xmp>
+#include <stdio.h>
+int main(){
+    char str[100];
+    printf("enter the string: ");
+    gets(str);
+    for(int i=0;str[i]!='\0';i++){
+        if(str[i]>='a'&&str[i]<='z'){
+            str[i]=str[i]-32;
+        }
+        else if(str[i]>='A'&&str[i]<='Z'){
+            str[i]=str[i]+32;
+        }
+    }
+    printf("toggle case is: %s",str);
+    return 0;
+}
+</xmp>
+<hr>
+</pre>
+</ol>
+</div>
+
+<!--6 question of Strings -->
+<div class="ques">
+
+
+<ol start="6">
+    <li><h3>Enter the string from user and find length of the string ?</h3></li>
+<button onclick="Code('code6')">Show code</button>
+<pre id="code6" style="display:none;">
+<xmp>
+#include <stdio.h>
+int main(){
+    char str[100];
+    int count=0;
+    printf("enter the string: ");
+    gets(str);
+    for(int i=0;str[i]!='\0';i++){
+        count++;
+    }
+    printf("length of the string is: %d",count);
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--7 question of Strings -->
+<div class="ques">
+
+
+<ol start="7">
+    <li><h3>ENTER TWO STRINGS FROM USER AND COMPARE THOSE STRINGS THAT THEY ARE EQUAL OR NOT?</h3></li>
+<button onclick="Code('code7')">Show code</button>
+<pre id="code7" style="display:none;">
+<xmp>
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    char str1[50],str2[50];
+    printf("enter first string: ");
+    gets(str1);
+    printf("enter second string: ");
+    gets(str2);
+    if(strcmp(str1,str2)==0){
+        printf("strings are equal");
+    }
+    else{
+        printf("strings are not equal");
+    }
+    return 0;
+}
+
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+<!--8 question of Strings -->
+<div class="ques">
+
+
+<ol start="8">
+    <li><h3>ENTER TWO STRINGS FROM USER AND CONCATENATE THOSE STRINGS IN ANOTHER STRING AND DISPLAY THE ANSWER?</h3></li>
+<button onclick="Code('code8')">Show code</button>
+<pre id="code8" style="display:none;">
+<xmp>
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str1[50],str2[50],str3[100];
+    printf("enter first string: ");
+    gets(str1);
+    printf("enter second string: ");
+    gets(str2);
+    strcpy(str3,str1);
+    strcat(str3,str2);
+    printf("concatenated string is: %s",str3);
+    return 0;
+}
+
+</xmp>
+</pre>
+</ol>
+</div>
+
+
+<!--9 question of Strings -->
+<div class="ques">
+
+
+<ol start="9">
+    <li><h3>ENTER THE STRING FROM USER AND COPY IT INTO ANOTHER STRING VARIABLE?</h3></li>
+<button onclick="Code('code9')">Show code</button>
+<pre id="code9" style="display:none;">
+<xmp>
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str1[50],str2[50];
+    printf("enter the string: ");
+    gets(str1);
+    strcpy(str2,str1);
+    printf("copied string is: %s",str2);
+    return 0;
+}
+</xmp>
+</pre>
+</ol>
+</div>
+
+
+<!--10 question of Strings -->
+<div class="ques">
+
+
+<ol start="10">
+    <li><h3>ENTER THE STRING FROM USER, ENTER THE INDEX NUMBER AND PRINT CHARACTER PRESENT ON THAT INDEX ?</h3></li>
+<button onclick="Code('code10')">Show code</button>
+<pre id="code10" style="display:none;">
+<xmp>
+#include<stdio.h>
+int main(){
+    char str[50];
+    int x;
+    printf("enter the string: ");
+    gets(str);
+    printf("enter index number: ");
+    scanf("%d",&x);
+    if(x>=0&&str[x]!='\0'){
+        printf("character at index %d is: %c",x,str[x]);
+    }
+    else{
+        printf("invalid index");
+    }
+    return 0;
+}
+</xmp>
+</pre>
+</ol>
+</div>
+
+
+<!--11 question of Strings -->
+<div class="ques">
+
+
+<ol start="11">
+    <li><h3>ENTER THE STRING FROM USER AND CHECK ITS PALINDROME OR NOT?
+</h3></li>
+<button onclick="Code('code11')">Show code</button>
+<pre id="code11" style="display:none;">
+<xmp>
+ #include<stdio.h>
+#include<string.h>
+int main(){
+    char str[50];
+    int i,l,flag=0;
+    printf("enter the string: ");
+    gets(str);
+    l=strlen(str);
+    for(i=0;i<l/2;i++){
+        if(str[i]!=str[l-i-1]){
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0){
+        printf("string is palindrome");
+    }
+    else{
+        printf("string is not palindrome");
+    }
+    return 0;
+}
+</xmp>
+<hr>
+<h2>OUTPUT: </h2>
+Enter string: Hello, how are you?
+Punctuation count: 2
+</pre>
+</ol>
+</div>
+
+
+<!--12 question of Strings -->
+<div class="ques">
+
+
+<ol>
+    <li><h3>ENTER THE STRING FROM THE USER AND PRINT EACH CHARACTER IN NEW LINE ?</h3></li>
+<button onclick="Code('code12')">Show code</button>
+<pre id="code12" style="display:none;">
+<xmp>
+#include<stdio.h>
+int main(){
+    char s[50];
+    int i;
+    printf("enter the string: ");
+    gets(s);
+    for(i=0;s[i]!='\0';i++){
+        printf("%c\n",s[i]);
+    }
+    return 0;
+}
+
+</xmp> 
+</pre>
+</ol>
+</div>
+
+<!--13 question of Strings -->
+<div class="ques">
+    <ol start="13">
+
+    <li><h3>ENTER THE STRING FROM THE USER AND COPY REVERSE OF THE STRING INTO ANOTHER STRING ?</h3><br></li>
+<button onclick="Code('code13')">Show code</button>
+<pre id="code13" style="display:none;">
+    <xmp>
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[50],s2[50];
+    int i,l;
+    printf("enter the string: ");
+    gets(s);
+    l=strlen(s);
+    for(i=0;i<l;i++){
+        s2[i]=s[l-i-1];
+    }
+    s2[i]='\0';
+    printf("reverse string is: %s",s2);
+    return 0;
+}
+</xmp>
+</pre>
+</div>
+
+<!--14 question of Strings -->
+<div class="ques">
+    <ol start="14">
+<li ><h3>ENTER THE STRING FROM THE USER AND PRINT THE DIFFERENCE OF ASCII VALUE OF EACH CHARACTER ?
+</h3></li>
+
+<button onclick="Code('code14')">Show code</button>
+<pre id="code14" style="display:none;">
+    <xmp>
+#include<stdio.h>
+int main(){
+    char s[50];
+    int i;
+    printf("enter the string: ");
+    gets(s);
+    for(i=0;s[i]!='\0'-1;i++){
+        printf("%d\n",s[i]-s[i+1]);
+    }
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>   
+</div>
+
+
+<!--15 question of Strings -->
+<div class="ques">
+    <ol start="15">
+<li ><h3>ENTER THE STRING FROM THE USER, ENTER A CHARACTER ALSO AND SEARCH THE CHARACTER IN THE STRING?</h3></li>
+
+<button onclick="Code('code15')">Show code</button>
+<pre id="code15" style="display:none;">
+    <xmp>
+#include<stdio.h>
+int main(){
+    char s[50],x;
+    int i,f=0;
+    printf("enter the string: ");
+    gets(s);
+    printf("enter character to search: ");
+    scanf("%c",&x);
+    for(i=0;s[i]!='\0';i++){
+        if(s[i]==x){
+            f=1;
+            break;
+        }
+    }
+    if(f==1){
+        printf("character found");
+    }
+    else{
+        printf("character not found");
+    }
+    return 0;
+}
+</xmp>
+</pre>
+</ol>   
+</div>
+
+<!--16 question of Strings -->
+<div class="ques">
+
+
+<ol start="16">
+    <li><h3>ENTER THE STRING FROM THE USER, ALSO ENTER A CHARACTER AND PRINT THE INDEX OF THE CHARACTER IF IT IS EXIST IN THE STRING ELSE PRINT -1.</h3></li>
+<button onclick="Code('code16')">Show code</button>
+<pre id="code16" style="display:none;">
+    <xmp>
+#include<stdio.h>
+int main(){
+    char s[50],x;
+    int i,f=-1;
+    printf("enter the string: ");
+    gets(s);
+    printf("enter character: ");
+    scanf(" %c",&x);
+    for(i=0;s[i]!='\0';i++){
+        if(s[i]==x){
+            f=i;
+            break;
+        }
+    }
+    printf("%d",f);
+    return 0;
+}
+</xmp>
+</pre>
+</ol>
+</div>
+
+<!--17 question of Strings -->
+<div class="ques">
+
+
+<ol start="17">
+    <li><h3>ENTER THE STRING FROM THE USER, AND COUNT THE NUMBER OF VOWELS.</h3></li>
+<button onclick="Code('code17')">Show code</button>
+<pre id="code17" style="display:none;">
+<xmp>
+#include<stdio.h>
+int main(){
+    char s[50];
+    int i,c=0;
+    printf("enter the string: ");
+    gets(s);
+    for(i=0;s[i]!='\0';i++){
+        if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'||
+           s[i]=='A'||s[i]=='E'||s[i]=='I'||s[i]=='O'||s[i]=='U'){
+            c++;
+        }
+    }
+    printf("number of vowels: %d",c);
+    return 0;
+}
+
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--18 question of Strings -->
+<div class="ques">
+
+
+<ol start="18">
+    <li><h3>ENTER THE STRING FROM THE USER AND CONVERT INTO AN INTEGER VALUE?</h3></li>
+<button onclick="Code('code18')">Show code</button>
+<pre id="code18" style="display:none;">
+<xmp>
+
+            max = count;
+            maxc = str[i];
+        }
+
+        if(count < min)
+        {#include<stdio.h>
+int main(){
+    char s[50];
+    int i,x=0;
+    printf("enter the string: ");
+    gets(s);
+    for(i=0;s[i]!='\0';i++){
+        x=x*10+(s[i]-'0');
+    }
+    printf("integer value is: %d",x);
+    return 0;
+}
+</xmp>
+</pre>
+</ol>
+</div>
+
+<!--19 question of Strings -->
+<div class="ques">
+
+
+<ol start="19">
+    <li><h3>ENTER THE STRING FROM THE USER AND CONVERT INTO A FLOAT VALUE?</h3></li>
+<button onclick="Code('code19')">Show code</button>
+<pre id="code19" style="display:none;">
+<xmp>
+#include<stdio.h>
+int main(){
+    char s[50];
+    int i=0;
+    float x=0.0,p=0.1;
+    printf("enter the string: ");
+    gets(s);
+    while(s[i]!='.' && s[i]!='\0'){
+        x=x*10+(s[i]-'0');
+        i++;
+    }
+    if(s[i]=='.'){
+        i++;
+        while(s[i]!='\0'){
+            x=x+(s[i]-'0')*p;
+            p=p/10;
+            i++;
+        }
+    }
+    printf("float value is: %f",x);
+    return 0;
+}
+</xmp>
+<hr>
+<h2>OUTPUT: </h2>
+Enter string: hello
+olleh
+</pre>
+</ol>
+</div>
+
+
+<!--20 question of Strings -->
+<div class="ques">
+
+
+<ol start="20">
+    <li><h3>ENTER THE STRING FROM THE USER AND COUNT THE NUMBER OF CHARACTERS, WORDS, SPACES AND LINES</h3></li>
+<button onclick="Code('code20')">Show code</button>
+<pre id="code20" style="display:none;">
+<xmp>
+#include<stdio.h>
+int main(){
+    char s[500];
+    int i,c=0,w=0,sp=0,l=1,f=0;
+    printf("enter the string: ");
+    gets(s);
+    for(i=0;s[i]!='\0';i++){
+        c++;
+        if(s[i]==' '){
+            sp++;
+            f=0;
+        }
+        else if(s[i]=='\n'){
+            l++;
+            f=0;
+        }
+        else if(f==0){
+            w++;
+            f=1;
+        }
+    }
+    printf("characters: %d\n",c);
+    printf("words: %d\n",w);
+    printf("spaces: %d\n",sp);
+    printf("lines: %d",l);
+    return 0;
+}
+</xmp>
+<hr>
+<h2>OUTPUT: </h2>
+Enter string: hello
+Duplicate characters: l 
+</pre>
+</ol>
+</div>
+
+
+<!--21 question of Strings -->
+<div class="ques">
+
+
+<ol start="21">
+    <li><h3>PRINT ALL THE PERMUTATION OF A STRING I.E. "ABCDE".</h3></li>
+<button onclick="Code('code21')">Show code</button>
+<pre id="code21" style="display:none;">
+<xmp>
+#include<stdio.h>
+#include<string.h>
+void swap(char *a,char *b){
+    char t=*a;
+    *a=*b;
+    *b=t;
+}
+void perm(char s[],int l,int r){
+    int i;
+    if(l==r){
+        printf("%s\n",s);
+    }
+    else{
+        for(i=l;i<=r;i++){
+            swap(&s[l],&s[i]);
+            perm(s,l+1,r);
+            swap(&s[l],&s[i]);
+        }
+    }
+}
+int main(){
+    char s[50];
+    printf("enter the string: ");
+    gets(s);
+    perm(s,0,strlen(s)-1);
+    return 0;
+}
+</xmp>
+</pre>
+</ol>
+</div>
+
+
+<!--22 question of Strings -->
+<div class="ques">
+
+
+<ol start="22">
+    <li><h3>ENTER THE STRING FROM THE USER, SORT THE STRING IN ASCENDING ORDER AND PRINT IT.</h3></li>
+<button onclick="Code('code22')">Show code</button>
+<pre id="code22" style="display:none;">
+<xmp>
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[50],t;
+    int i,j,l;
+    printf("enter the string: ");
+    gets(s);
+    l=strlen(s);
+    for(i=0;i<l;i++){
+        for(j=i+1;j<l;j++){
+            if(s[i]>s[j]){
+                t=s[i];
+                s[i]=s[j];
+                s[j]=t;
+            }
+        }
+    }
+    printf("sorted string is: %s",s);
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--23 question of Strings -->
+<div class="ques">
+
+
+<ol start="23">
+    <li><h3>ENTER A SENTENCE FROM USER AND THEN ENTER THE WORD AND COUNT THE OCCURENCE OF THAT WORD IN THE SENTENCE.</h3></li>
+<button onclick="Code('code23')">Show code</button>
+<pre id="code23" style="display:none;">
+<xmp>
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[100],w[50],t[50];
+    int i,j,c=0,k;
+    printf("enter the sentence: ");
+    gets(s);
+    printf("enter the word: ");
+    gets(w);
+    for(i=0;s[i]!='\0';i++){
+        j=0;
+        while(s[i]!=' ' && s[i]!='\0'){
+            t[j]=s[i];
+            j++;
+            i++;
+        }
+        t[j]='\0';
+        if(strcmp(t,w)==0){
+            c++;
+        }
+    }
+    printf("occurrence: %d",c);
+    return 0;
+}
+
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--24 question of Strings -->
+<div class="ques">
+
+
+<ol start="24">
+    <li><h3>ENTER A SENTENCE FROM USER AND THEN ENTER THE WORD AND REPLACE THAT WORD BY ANOTHER WORD.</h3></li>
+<button onclick="Code('code24')">Show code</button>
+<pre id="code24" style="display:none;">
+<xmp>
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[100],w[50],r[50],t[50],ans[100];
+    int i,j,k=0;
+    printf("enter the sentence: ");
+    gets(s);
+    printf("enter the word to replace: ");
+    gets(w);
+    printf("enter new word: ");
+    gets(r);
+    for(i=0;s[i]!='\0';i++){
+        j=0;
+        while(s[i]!=' ' && s[i]!='\0'){
+            t[j]=s[i];
+            j++;
+            i++;
+        }
+        t[j]='\0';
+        if(strcmp(t,w)==0){
+            for(j=0;r[j]!='\0';j++){
+                ans[k++]=r[j];
+            }
+        }
+        else{
+            for(j=0;t[j]!='\0';j++){
+                ans[k++]=t[j];
+            }
+        }
+        if(s[i]==' '){
+            ans[k++]=' ';
+        }
+    }
+    ans[k]='\0';
+    printf("new sentence: %s",ans);
+    return 0;
+}
+</xmp>
+<hr>
+<h2>OUTPUT: </h2>
+Enter string: hello
+Longest repeating character: l
+</pre>
+</ol>
+</div>
+
+
+<!--25 question of Strings -->
+<div class="ques">
+
+
+<ol start="25">
+    <li><h3>ENTER THE STRING FROM THE USER AND TRIM/ ELIMINATE THE SPACES FROM BOTH ENDS (IF ANY).</h3></li>
+<button onclick="Code('code25')">Show code</button>
+<pre id="code25" style="display:none;">
+<xmp>
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[50];
+    int i,j,l;
+    printf("enter the string: ");
+    gets(s);
+    l=strlen(s);
+    i=0;
+    while(s[i]==' '){
+        i++;
+    }
+    j=l-1;
+    while(j>=i && s[j]==' '){
+        j--;
+    }
+    l=0;
+    while(i<=j){
+        s[l]=s[i];
+        l++;
+        i++;
+    }
+    s[l]='\0';
+    printf("trimmed string: %s",s);
+    return 0;
+}
+</xmp>
+</pre>
+</ol>
+</div>
+
+
+
+<!--26 question of Strings -->
+<div class="ques">
+
+
+<ol start="26">
+    <li><h3>ENTER THE STRING FROM USER AND SPLITS THE FIRST WORD AND SECOND WORD AND RETURN THE START INDEX OF THE SECOND WORD.</h3></li>
+<button onclick="Code('code26')">Show code</button>
+<pre id="code26" style="display:none;">
+<xmp>
+#include<stdio.h>
+int main(){
+    char s[50],w1[50],w2[50];
+    int i=0,j=0,k=0,x;
+    printf("enter the string: ");
+    gets(s);
+    while(s[i]!=' ' && s[i]!='\0'){
+        w1[j]=s[i];
+        i++;
+        j++;
+    }
+    w1[j]='\0';
+    while(s[i]==' '){
+        i++;
+    }
+    x=i;
+    while(s[i]!=' ' && s[i]!='\0'){
+        w2[k]=s[i];
+        i++;
+        k++;
+    }
+    w2[k]='\0';
+    printf("first word: %s\n",w1);
+    printf("second word: %s\n",w2);
+    printf("start index of second word: %d",x);
+    return 0;
+}
+</xmp>
+</pre>
+</ol>
+</div>
+
+
+
+<!--27 question of Strings -->
+<div class="ques">
+
+
+<ol start="27">
+    <li><h3>CREATE A DICTIONARY HAVING 10 WORDS AND THEIR MEANING WITH FOLLOWING OPERATIONS. [CREATE, DELETE, SEARCH].</h3></li>
+<button onclick="Code('code27')">Show code</button>
+<pre id="code27" style="display:none;">
+<xmp>
+ #include<stdio.h>
+#include<string.h>
+struct dict{
+    char w[50],m[100];
+};
+struct dict d[10];
+int n=0;
+
+void create(){
+    int i;
+    if(n==10){
+        printf("dictionary is full");
+    }
+    else{
+        printf("enter word: ");
+        scanf("%49s",d[n].w);
+        printf("enter meaning: ");
+        scanf(" %99[^\n]",d[n].m);
+        n++;
+        printf("word added");
+    }
+}
+void delete(){
+    char x[50];
+    int i,j,f=0;
+    printf("enter word to delete: ");
+    scanf("%49s",x);
+    for(i=0;i<n;i++){
+        if(strcmp(d[i].w,x)==0){
+            for(j=i;j<n-1;j++){
+                d[j]=d[j+1];
+            }
+            n--;
+            f=1;
+            break;
+        }
+    }
+    if(f==1){
+        printf("word deleted");
+    }
+    else{
+        printf("word not found");
+    }
+}
+void search(){
+    char x[50];
+    int i,f=0;
+    printf("enter word to search: ");
+    scanf("%49s",x);
+    for(i=0;i<n;i++){
+        if(strcmp(d[i].w,x)==0){
+            printf("meaning: %s",d[i].m);
+            f=1;
+            break;
+        }
+    }
+    if(f==0){
+        printf("word not found");
+    }
+}
+int main(){
+    int x,i;
+    for(i=0;i<10;i++){
+        create();
+    }
+    do{
+        printf("\n---DICTIONARY MENU---\n");
+        printf("1.create\n2.delete\n3.search\n4.exit\n");
+        printf("enter choice: ");
+        scanf("%d",&x);
+        if(x==1){
+            create();
+        }
+        else if(x==2){
+            delete();
+        }
+        else if(x==3){
+            search();
+        }
+        else if(x==4){
+            printf("exit");
+        }
+        else{
+            printf("invalid choice");
+        }
+    }while(x!=4);
+    return 0;
+}
+
+</xmp>
+</pre>
+</ol>
+</div>
+
+
+<!--28 question of Strings -->
+<div class="ques">
+
+
+<ol start="28">
+    <li><h3>ENTER THE STRING FROM USER AND CONVERT CHARACTERS INTO THEIR ASCII VALUES IN THE INTEGER ARRAY. [FOR EXAMPLE TAKE 10 CHARACTERS]</h3></li>
+<button onclick="Code('code28')">Show code</button>
+<pre id="code28" style="display:none;">
+<xmp>
+ #include<stdio.h>
+int main(){
+    char s[10];
+    int a[10],i;
+    printf("enter 10 characters: ");
+    gets(s);
+    for(i=0;i<10;i++){
+        a[i]=s[i];
+    }
+    printf("ASCII values are:\n");
+    for(i=0;i<10;i++){
+        printf("%d\n",a[i]);
+    }
+    return 0;
+}
+</xmp>
+</pre>
+</ol>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+
+</html>
+

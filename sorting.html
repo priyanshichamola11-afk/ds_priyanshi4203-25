@@ -1,0 +1,1375 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+ 
+	<title> Data Conversion </title>
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+   
+      <marquee direction="left" loop="" behavior=scroll >Unwrap the Magic of Programming
+            with C Language – Enchance Your Skills With Programming</marquee>
+    
+
+    <div class="header">
+    <nav>
+        <ul>   
+            <li><strong>Practice Question</strong></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+    
+</header>
+
+
+<!--1 question of Data Conversion -->
+<div class="ques">
+
+
+<ol>
+    <li><h3>ENTER A INTEGER ARRAY FROM THE USER AND PERFORM BUBBLE SORT ALGORITHM THROUGH ITERATION. 
+ALSO CALCULATE THE WORST AND BEST COMPLEXITY WITH EXACT TIME.
+ </h3></li>
+<button onclick="Code('code1')">Show code</button>
+<pre id="code1" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int main()
+{
+    int arr[50];
+    int n, i, j, temp;
+    int swapped;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i < n - 1; i++)
+    {
+        swapped = 0;
+
+        for (j = 0; j < n - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = 1;
+            }
+        }
+
+        if (swapped == 0)
+        {
+            break;
+        }
+    }
+
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp> 
+
+</pre>
+</ol>
+</div>
+
+
+<!--2 question of Data Conversion -->
+<div class="ques">
+    <ol start="2">
+
+    <li><h3> ENTER A INTEGER ARRAY FROM THE USER AND PERFORM BUBBLE SORT ALGORITHM THROUGH RECURSION.
+</h3><br></li>
+<button onclick="Code('code2')">Show code</button>
+<pre id="code2" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int arr[50];
+int n;
+
+void bubbleSort(int size)
+{
+    int j, temp;
+    int swapped = 0;
+
+    if (size == 1)
+    {
+        return;
+    }
+
+    for (j = 0; j < size - 1; j++)
+    {
+        if (arr[j] > arr[j + 1])
+        {
+            temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+            swapped = 1;
+        }
+    }
+
+    if (swapped == 0)
+    {
+        return;
+    }
+
+    bubbleSort(size - 1);
+}
+
+int main()
+{
+    int i;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    bubbleSort(n);
+
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</div>
+
+<!--3 question of Data Conversion -->
+<div class="ques">
+    <ol start="3">
+<li ><h3>ENTER A INTEGER ARRAY FROM THE USER AND PERFORM INSERTION SORT ALGORITHM THROUGH ITERATION. 
+</h3></li>
+
+<button onclick="Code('code3')">Show code</button>
+<pre id="code3" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int main()
+{
+    int arr[50];
+    int n, i, j, key;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 1; i < n; i++)
+    {
+        key = arr[i];
+        j = i - 1;
+
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        arr[j + 1] = key;
+    }
+
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>   
+</div>
+
+
+<!--4 question of Data Conversion -->
+<div class="ques">
+    <ol start="4">
+<li ><h3>ENTER A INTEGER ARRAY FROM THE USER AND PERFORM INSERTION SORT ALGORITHM THROUGH RECURSION
+
+</h3></li>
+
+<button onclick="Code('code4')">Show code</button>
+<pre id="code4" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int arr[50];
+int n;
+
+void insertionSort(int size)
+{
+    int key, j;
+
+    if (size <= 1)
+    {
+        return;
+    }
+
+    insertionSort(size - 1);
+
+    key = arr[size - 1];
+    j = size - 2;
+
+    while (j >= 0 && arr[j] > key)
+    {
+        arr[j + 1] = arr[j];
+        j--;
+    }
+
+    arr[j + 1] = key;
+}
+
+int main()
+{
+    int i;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    insertionSort(n);
+
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>   
+</div>
+
+<!--5 question of Data Conversion -->
+<div class="ques">
+
+
+<ol start="5">
+    <li><h3>ENTER A INTEGER ARRAY FROM THE USER AND PERFORM MERGE SORT ALGORITHM THROUGH ITERATION. 
+
+</h3></li>
+<button onclick="Code('code5')">Show code</button>
+<pre id="code5" style="display:none;">
+    <xmp>
+#include <stdio.h>
+
+int arr[50];
+int temp[50];
+int n;
+
+void merge(int left, int mid, int right)
+{
+    int i = left;
+    int j = mid;
+    int k = left;
+
+    while (i < mid && j < right)
+    {
+        if (arr[i] <= arr[j])
+        {
+            temp[k] = arr[i];
+            i++;
+        }
+        else
+        {
+            temp[k] = arr[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < mid)
+    {
+        temp[k] = arr[i];
+        i++;
+        k++;
+    }
+
+    while (j < right)
+    {
+        temp[k] = arr[j];
+        j++;
+        k++;
+    }
+
+    for (k = left; k < right; k++)
+    {
+        arr[k] = temp[k];
+    }
+}
+
+int main()
+{
+    int i, width, left, mid, right;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (width = 1; width < n; width = width * 2)
+    {
+        for (left = 0; left < n; left = left + 2 * width)
+        {
+            mid = left + width;
+            right = left + 2 * width;
+
+            if (mid > n)
+            {
+                mid = n;
+            }
+
+            if (right > n)
+            {
+                right = n;
+            }
+
+            merge(left, mid, right);
+        }
+    }
+
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+<!--6 question of Data Conversion -->
+<div class="ques">
+
+
+<ol start="6">
+    <li><h3>ENTER A INTEGER ARRAY FROM THE USER AND PERFORM MERGE SORT ALGORITHM THROUGH RECURSION. 
+.</h3></li>
+<button onclick="Code('code6')">Show code</button>
+<pre id="code6" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int arr[50];
+int temp[50];
+int n;
+
+void merge(int left, int mid, int right)
+{
+    int i = left;
+    int j = mid + 1;
+    int k = left;
+
+    while (i <= mid && j <= right)
+    {
+        if (arr[i] <= arr[j])
+        {
+            temp[k] = arr[i];
+            i++;
+        }
+        else
+        {
+            temp[k] = arr[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i <= mid)
+    {
+        temp[k] = arr[i];
+        i++;
+        k++;
+    }
+
+    while (j <= right)
+    {
+        temp[k] = arr[j];
+        j++;
+        k++;
+    }
+
+    for (k = left; k <= right; k++)
+    {
+        arr[k] = temp[k];
+    }
+}
+
+void mergeSort(int left, int right)
+{
+    int mid;
+
+    if (left >= right)
+    {
+        return;
+    }
+
+    mid = (left + right) / 2;
+
+    mergeSort(left, mid);
+    mergeSort(mid + 1, right);
+    merge(left, mid, right);
+}
+
+int main()
+{
+    int i;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    mergeSort(0, n - 1);
+
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--7 question of Data Conversion -->
+<div class="ques">
+<ol start="7">
+    <li><h3>ENTER A INTEGER ARRAY FROM THE USER AND PERFORM QUICK SORT ALGORITHM THROUGH ITERATION
+
+</h3></li>
+<button onclick="Code('code7')">Show code</button>
+<pre id="code7" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int arr[50];
+int n;
+
+int stack[100];
+int top = -1;
+
+void push(int x)
+{
+    top++;
+    stack[top] = x;
+}
+
+int pop()
+{
+    int x = stack[top];
+    top--;
+    return x;
+}
+
+int partition(int low, int high)
+{
+    int pivot = arr[high];
+    int i = low - 1;
+    int j, temp;
+
+    for (j = low; j < high; j++)
+    {
+        if (arr[j] <= pivot)
+        {
+            i++;
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+
+    temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
+
+    return i + 1;
+}
+
+int main()
+{
+    int i, low, high, p;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    push(0);
+    push(n - 1);
+
+    while (top != -1)
+    {
+        high = pop();
+        low = pop();
+
+        p = partition(low, high);
+
+        if (p - 1 > low)
+        {
+            push(low);
+            push(p - 1);
+        }
+
+        if (p + 1 < high)
+        {
+            push(p + 1);
+            push(high);
+        }
+    }
+
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+<!--8 question of Data Conversion -->
+<div class="ques">
+
+
+<ol start="8">
+    <li><h3>ENTER A INTEGER ARRAY FROM THE USER AND PERFORM QUICK SORT ALGORITHM THROUGH RECURSION.</h3></li>
+<button onclick="Code('code8')">Show code</button>
+<pre id="code8" style="display:none;">
+<xmp>
+#include <stdio.h>
+
+int arr[50];
+int n;
+
+int partition(int low, int high)
+{
+    int pivot = arr[high];
+    int i = low - 1;
+    int j, temp;
+
+    for (j = low; j < high; j++)
+    {
+        if (arr[j] <= pivot)
+        {
+            i++;
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+
+    temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
+
+    return i + 1;
+}
+
+void quickSort(int low, int high)
+{
+    int p;
+
+    if (low >= high)
+    {
+        return;
+    }
+
+    p = partition(low, high);
+
+    quickSort(low, p - 1);
+    quickSort(p + 1, high);
+}
+
+int main()
+{
+    int i;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    quickSort(0, n - 1);
+
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--9 question of Data Conversion -->
+<div class="ques">
+
+
+<ol start="9">
+    <li><h3>ENTER A STRING ARRAY FROM THE USER AND PERFORM BUBBLE SORT ALGORITHM THROUGH RECURSION
+</h3></li>
+<button onclick="Code('code9')">Show code</button>
+<pre id="code9" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char arr[20][30];
+    char temp[30];
+    int n, i, j;
+    int swapped;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", arr[i]);
+    }
+
+    for (i = 0; i < n - 1; i++)
+    {
+        swapped = 0;
+
+        for (j = 0; j < n - i - 1; j++)
+        {
+            if (strcmp(arr[j], arr[j + 1]) > 0)
+            {
+                strcpy(temp, arr[j]);
+                strcpy(arr[j], arr[j + 1]);
+                strcpy(arr[j + 1], temp);
+                swapped = 1;
+            }
+        }
+
+        if (swapped == 0)
+        {
+            break;
+        }
+    }
+
+    printf("Sorted strings: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--10 question of Data Conversion-->
+<div class="ques">
+
+
+<ol start="10">
+    <li><h3>ENTER A STRING ARRAY FROM THE USER AND PERFORM BUBBLE SORT ALGORITHM THROUGH ITERATION
+
+</h3></li>
+<button onclick="Code('code10')">Show code</button>
+<pre id="code10" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char arr[20][30];
+    char temp[30];
+    int n, i, j;
+    int swapped;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", arr[i]);
+    }
+
+    for (i = 0; i < n - 1; i++)
+    {
+        swapped = 0;
+
+        for (j = 0; j < n - i - 1; j++)
+        {
+            if (strcmp(arr[j], arr[j + 1]) > 0)
+            {
+                strcpy(temp, arr[j]);
+                strcpy(arr[j], arr[j + 1]);
+                strcpy(arr[j + 1], temp);
+                swapped = 1;
+            }
+        }
+
+        if (swapped == 0)
+        {
+            break;
+        }
+    }
+
+    printf("Sorted strings: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+   
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--11 question of Data Conversion -->
+<div class="ques">
+
+
+<ol start="11">
+    <li><h3>ENTER A STRING ARRAY FROM THE USER AND PERFORM INSERTION SORT ALGORITHM THROUGH ITERATION.
+</h3></li>
+<button onclick="Code('code11')">Show code</button>
+<pre id="code11" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char arr[20][30];
+    char key[30];
+    int n, i, j;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", arr[i]);
+    }
+
+    for (i = 1; i < n; i++)
+    {
+        strcpy(key, arr[i]);
+        j = i - 1;
+
+        while (j >= 0 && strcmp(arr[j], key) > 0)
+        {
+            strcpy(arr[j + 1], arr[j]);
+            j--;
+        }
+
+        strcpy(arr[j + 1], key);
+    }
+
+    printf("Sorted strings: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--12 question of Data Conversion  -->
+<div class="ques">
+
+
+<ol start="12">
+    <li><h3>ENTER A STRING ARRAY FROM THE USER AND PERFORM INSERTION SORT ALGORITHM THROUGH RECURSION.
+
+</h3></li>
+<button onclick="Code('code12')">Show code</button>
+<pre id="code12" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char arr[20][30];
+int n;
+
+void insertionSort(int size)
+{
+    char key[30];
+    int j;
+
+    if (size <= 1)
+    {
+        return;
+    }
+
+    insertionSort(size - 1);
+
+    strcpy(key, arr[size - 1]);
+    j = size - 2;
+
+    while (j >= 0 && strcmp(arr[j], key) > 0)
+    {
+        strcpy(arr[j + 1], arr[j]);
+        j--;
+    }
+
+    strcpy(arr[j + 1], key);
+}
+
+int main()
+{
+    int i;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", arr[i]);
+    }
+
+    insertionSort(n);
+
+    printf("Sorted strings: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--13 question of File handling -->
+<div class="ques">
+
+
+<ol start="13">
+    <li><h3>ENTER A STRING ARRAY FROM THE USER AND PERFORM MERGE SORT ALGORITHM THROUGH ITERATION.</h3></li>
+<button onclick="Code('code13')">Show code</button>
+<pre id="code13" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char arr[20][30];
+char temp[20][30];
+int n;
+
+void merge(int left, int mid, int right)
+{
+    int i = left;
+    int j = mid;
+    int k = left;
+
+    while (i < mid && j < right)
+    {
+        if (strcmp(arr[i], arr[j]) <= 0)
+        {
+            strcpy(temp[k], arr[i]);
+            i++;
+        }
+        else
+        {
+            strcpy(temp[k], arr[j]);
+            j++;
+        }
+        k++;
+    }
+
+    while (i < mid)
+    {
+        strcpy(temp[k], arr[i]);
+        i++;
+        k++;
+    }
+
+    while (j < right)
+    {
+        strcpy(temp[k], arr[j]);
+        j++;
+        k++;
+    }
+
+    for (k = left; k < right; k++)
+    {
+        strcpy(arr[k], temp[k]);
+    }
+}
+
+int main()
+{
+    int i, width, left, mid, right;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", arr[i]);
+    }
+
+    for (width = 1; width < n; width = width * 2)
+    {
+        for (left = 0; left < n; left = left + 2 * width)
+        {
+            mid = left + width;
+            right = left + 2 * width;
+
+            if (mid > n)
+            {
+                mid = n;
+            }
+
+            if (right > n)
+            {
+                right = n;
+            }
+
+            merge(left, mid, right);
+        }
+    }
+
+    printf("Sorted strings: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--14 question of File handling -->
+<div class="ques">
+
+
+<ol start="14">
+    <li><h3>ENTER A STRING ARRAY FROM THE USER AND PERFORM MERGE SORT ALGORITHM THROUGH RECURSION.
+</h3></li>
+<button onclick="Code('code14')">Show code</button>
+<pre id="code14" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char arr[20][30];
+char temp[20][30];
+int n;
+
+void merge(int left, int mid, int right)
+{
+    int i = left;
+    int j = mid + 1;
+    int k = left;
+
+    while (i <= mid && j <= right)
+    {
+        if (strcmp(arr[i], arr[j]) <= 0)
+        {
+            strcpy(temp[k], arr[i]);
+            i++;
+        }
+        else
+        {
+            strcpy(temp[k], arr[j]);
+            j++;
+        }
+        k++;
+    }
+
+    while (i <= mid)
+    {
+        strcpy(temp[k], arr[i]);
+        i++;
+        k++;
+    }
+
+    while (j <= right)
+    {
+        strcpy(temp[k], arr[j]);
+        j++;
+        k++;
+    }
+
+    for (k = left; k <= right; k++)
+    {
+        strcpy(arr[k], temp[k]);
+    }
+}
+
+void mergeSort(int left, int right)
+{
+    int mid;
+
+    if (left >= right)
+    {
+        return;
+    }
+
+    mid = (left + right) / 2;
+
+    mergeSort(left, mid);
+    mergeSort(mid + 1, right);
+    merge(left, mid, right);
+}
+
+int main()
+{
+    int i;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", arr[i]);
+    }
+
+    mergeSort(0, n - 1);
+
+    printf("Sorted strings: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+<!--15 question of File handling -->
+<div class="ques">
+
+
+<ol start="15">
+    <li><h3>ENTER A STRING ARRAY FROM THE USER AND PERFORM QUICK SORT ALGORITHM THROUGH ITERATION. 
+</h3></li>
+<button onclick="Code('code15')">Show code</button>
+<pre id="code15" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char arr[20][30];
+int n;
+
+int stack[100];
+int top = -1;
+
+void push(int x)
+{
+    top++;
+    stack[top] = x;
+}
+
+int pop()
+{
+    int x = stack[top];
+    top--;
+    return x;
+}
+
+int partition(int low, int high)
+{
+    char pivot[30];
+    char temp[30];
+    int i = low - 1;
+    int j;
+
+    strcpy(pivot, arr[high]);
+
+    for (j = low; j < high; j++)
+    {
+        if (strcmp(arr[j], pivot) <= 0)
+        {
+            i++;
+            strcpy(temp, arr[i]);
+            strcpy(arr[i], arr[j]);
+            strcpy(arr[j], temp);
+        }
+    }
+
+    strcpy(temp, arr[i + 1]);
+    strcpy(arr[i + 1], arr[high]);
+    strcpy(arr[high], temp);
+
+    return i + 1;
+}
+
+int main()
+{
+    int i, low, high, p;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", arr[i]);
+    }
+
+    push(0);
+    push(n - 1);
+
+    while (top != -1)
+    {
+        high = pop();
+        low = pop();
+
+        p = partition(low, high);
+
+        if (p - 1 > low)
+        {
+            push(low);
+            push(p - 1);
+        }
+
+        if (p + 1 < high)
+        {
+            push(p + 1);
+            push(high);
+        }
+    }
+
+    printf("Sorted strings: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</xmp>
+
+</pre>
+</ol>
+</div>
+
+
+
+<!--16 question of File handling -->
+<div class="ques">
+
+
+<ol start="16">
+    <li><h3>ENTER A STRING ARRAY FROM THE USER AND PERFORM QUICK SORT ALGORITHM THROUGH RECURSION
+</h3></li>
+<button onclick="Code('code16')">Show code</button>
+<pre id="code16" style="display:none;">
+<xmp>
+#include <stdio.h>
+#include <string.h>
+
+char arr[20][30];
+int n;
+
+int partition(int low, int high)
+{
+    char pivot[30];
+    char temp[30];
+    int i = low - 1;
+    int j;
+
+    strcpy(pivot, arr[high]);
+
+    for (j = low; j < high; j++)
+    {
+        if (strcmp(arr[j], pivot) <= 0)
+        {
+            i++;
+            strcpy(temp, arr[i]);
+            strcpy(arr[i], arr[j]);
+            strcpy(arr[j], temp);
+        }
+    }
+
+    strcpy(temp, arr[i + 1]);
+    strcpy(arr[i + 1], arr[high]);
+    strcpy(arr[high], temp);
+
+    return i + 1;
+}
+
+void quickSort(int low, int high)
+{
+    int p;
+
+    if (low >= high)
+    {
+        return;
+    }
+
+    p = partition(low, high);
+
+    quickSort(low, p - 1);
+    quickSort(p + 1, high);
+}
+
+int main()
+{
+    int i;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", arr[i]);
+    }
+
+    quickSort(0, n - 1);
+
+    printf("Sorted strings: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+</xmp>
+
+</pre>
+</ol>
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>
+
